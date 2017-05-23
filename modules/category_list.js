@@ -15,7 +15,7 @@ class CategoryList extends React.Component {
     componentDidMount() {
       console.log('WE IN HERE YOU');
       console.log(document.cookie);
-      fetch(`http://localhost:3000/api/user_category`, {
+      fetch(`/api/user_category`, {
         credentials: "include",
          headers: {
          'Accept': 'application/json',
@@ -31,7 +31,7 @@ class CategoryList extends React.Component {
 
       handler() {
         console.log('handleing');
-        fetch(`http://localhost:3000/api/user_category`, {
+        fetch(`/api/user_category`, {
            method: "GET",
            credentials: "include",
            headers: {

@@ -22037,7 +22037,7 @@
 	        user_id: response.id
 	      };
 
-	      fetch('http://localhost:3000/api/users', {
+	      fetch('/api/users', {
 	        method: "POST",
 	        body: JSON.stringify(body),
 	        credentials: 'include',
@@ -25732,7 +25732,7 @@
 
 	      console.log('WE IN HERE YOU');
 	      console.log(document.cookie);
-	      fetch('http://localhost:3000/api/user_category', {
+	      fetch('/api/user_category', {
 	        credentials: "include",
 	        headers: {
 	          'Accept': 'application/json',
@@ -25751,7 +25751,7 @@
 	      var _this3 = this;
 
 	      console.log('handleing');
-	      fetch('http://localhost:3000/api/user_category', {
+	      fetch('/api/user_category', {
 	        method: "GET",
 	        credentials: "include",
 	        headers: {
@@ -25875,7 +25875,7 @@
 	         };
 
 	         if (event.target.className === 'catToggle') {
-	            fetch("http://localhost:3000/api/user_category", {
+	            fetch("/api/user_category", {
 	               method: "DELETE",
 	               body: JSON.stringify(body),
 	               credentials: 'include',
@@ -25887,7 +25887,7 @@
 	               return _this2.props.handler();
 	            });
 	         } else {
-	            fetch("http://localhost:3000/api/user_category", {
+	            fetch("/api/user_category", {
 	               method: "POST",
 	               body: JSON.stringify(body),
 	               credentials: 'include',

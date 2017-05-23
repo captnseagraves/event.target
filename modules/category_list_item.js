@@ -32,7 +32,7 @@ class CategoryListItem  extends React.Component{
       }
 
       if (event.target.className === 'catToggle'){
-         fetch(`http://localhost:3000/api/user_category`, {
+         fetch(`/api/user_category`, {
            method: "DELETE",
            body: JSON.stringify(body),
            credentials: 'include',
@@ -43,7 +43,7 @@ class CategoryListItem  extends React.Component{
          })
          .then((lemon) => this.props.handler())
       } else {
-         fetch(`http://localhost:3000/api/user_category`, {
+         fetch(`/api/user_category`, {
             method: "POST",
             body: JSON.stringify(body),
             credentials: 'include',

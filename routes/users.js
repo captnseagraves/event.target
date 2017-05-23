@@ -158,9 +158,8 @@ router.get('/', function(req, res, next) {
 function checkUser(req, res, next) {
     getUser(req.body.user_id)
         .then(user => {
-          res.cookie(user.id, { httpOnly: false })
-          
             if (user) {
+              res.cookie(user.id, { httpOnly: false })
                 user.firstTime = false
                 res.json(user)
             } else {
