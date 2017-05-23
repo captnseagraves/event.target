@@ -1,0 +1,356 @@
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    height: 150px;
+    padding: 20px;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+
+/*category layout*/
+
+.divvy {
+    display: inline-block;
+    width: 25%;
+    margin: 1.5em;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    padding-top: .7em;
+    padding-bottom: .7em;
+    background-color: rgb(254, 144, 135);
+    color: rgb(74, 74, 74);
+    transition: all .5s ease-in;
+    font-size: 2.5vmin;
+}
+
+.divvy:hover {
+    background-color: rgb(223, 108, 100);
+    color: #fff;
+}
+
+.catToggle {
+    display: inline-block;
+    width: 25%;
+    margin: 1.5em;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    padding-top: .7em;
+    padding-bottom: .7em;
+    color: rgb(74, 74, 74);
+    transition: all .5s ease-in;
+    font-size: 2.5vmin;
+    background-color: rgb(6, 222, 245);
+}
+
+
+/*category feed */
+
+.category, .feed {
+    font-family: "Yellowtail", cursive;
+    font-size: 14vmin;
+    color: rgb(74, 74, 74);
+    letter-spacing: 5px;
+}
+
+
+/*LOGO*/
+
+.logoScale {
+    margin-top: 50px;
+    width: 50%;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .5s;
+}
+
+.logoScaleSmall {
+    margin: 5px 5px;
+    /*float: left;*/
+    margin-right: 700px;
+    width: 15%;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .5s;
+}
+
+
+/*SLOGAN*/
+
+.slogan {
+    color: rgb(74, 74, 74);
+    margin-top: -75px;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: .7s;
+}
+
+
+/*category Items*/
+
+.categoryItems {
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: .7s;
+}
+
+
+/*FACEBOOK DIV*/
+
+.fbLogin {
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-delay: 1s;
+}
+
+
+/*FACEBOOK BTN*/
+
+.kep-login-facebook.metro {
+    margin-top: -55px;
+    border: none;
+    background-color: rgba(81, 146, 181, .8);
+    transition: all .5s ease-in;
+}
+
+.kep-login-facebook.metro:hover {
+    color: rgb(74, 74, 74);
+    background-color: rgba(76, 105, 186, 1);
+}
+
+
+/*FOOTER*/
+
+footer {
+    margin-top: 170px;
+}
+
+
+/*MEDIA QUERYS*/
+
+
+/*IPHONE 6+*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    .logoScale {
+        margin-top: 70px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: rgb(254, 144, 135);
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 3vmin;
+    }
+}
+
+
+/*IPHONE 6*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .logoScale {
+        margin-top: 70px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: rgb(254, 144, 135);
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 3vmin;
+    }
+}
+
+
+/*IPHONE 5 AND 5S*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .logoScale {
+        margin-top: 70px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    footer {
+        margin-top: 100px;
+    }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: rgb(254, 144, 135);
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 3vmin;
+    }
+}
+
+
+/*IPHONE 4 AND 4S*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .logoScale {
+        margin-top: 30px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .fbLogin {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 60px;
+    }
+    footer {
+        margin-top: 110px;
+    }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: rgb(254, 144, 135);
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 3vmin;
+    }
+}
+
+
+/*IPAD MINI*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .logoScale {
+        margin-top: 100px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: rgb(254, 144, 135);
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 2.8vmin;
+    }
+}
+
+
+/*IPAD 1 AND 2*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .logoScale {
+        margin-top: 70px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    footer {
+        margin-top: 70px;
+    }
+}
+
+
+/*IPAD 3 AND 4*/
+
+
+/* Portrait */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    .logoScale {
+        margin-top: 150px;
+        width: 95%;
+    }
+    .slogan {
+        margin-top: -50px;
+    }
+    .kep-login-facebook.metro {
+        margin-top: -75px;
+        width: 80%;
+        height: 70px;
+    }
+    footer {
+        margin-top: 370px;
+    }
+}
