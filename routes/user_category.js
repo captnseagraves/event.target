@@ -32,6 +32,20 @@ const jwt = require('jsonwebtoken');
         })
       })
 
+      router.get('/:id', function(req, res, next) {
+         knex('user_category')
+         .join('categories', 'user_category.category_id', 'categories.id')
+           .select('categories.name')
+           .where('user_category.user_id', req.params.id)
+           .then(data => {
+             console.log(data);
+              let catNames = []
+              data.map((el) => {
+                  catNames.push(el.name);
+              })
+              res.json(catNames)
+           })
+         })
 
 // possible delete here
    router.delete('/', function (req, res) {
