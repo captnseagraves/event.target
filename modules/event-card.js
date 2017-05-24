@@ -4,8 +4,6 @@ class EventCard extends React.Component {
 
   render() {
 
-    console.log('IN EVENTCARD')
-    console.log('this event is ', this.props.event.name);
     return (
 
           <div>

@@ -25908,7 +25908,6 @@
 	    value: function componentWillMount() {
 	      var _this2 = this;
 
-	      console.log('before', this.state.events);
 	      fetch('/api/events').then(function (res) {
 	        return res.json();
 	      }).then(function (events) {
@@ -25916,14 +25915,12 @@
 	        _this2.setState({
 	          events: events
 	        });
-	        console.log("after", _this2.state.events);
 	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      if (this.state.events.length > 0) {
-	        console.log('feed', this.state.events);
 	        return _react2.default.createElement(
 	          'div',
 	          null,
@@ -25991,8 +25988,7 @@
 
 	    _this.state = {
 	      events: _this.props.events,
-	      categories: [],
-	      hasFiltered: false
+	      categories: []
 	    };
 
 	    // console.log('another log', this.state)
@@ -26012,25 +26008,18 @@
 	        _this2.setState({
 	          categories: categories
 	        });
-	      });
-	    }
-	  }, {
-	    key: 'renderEvents',
-	    value: function renderEvents() {
-	      if (!this.state.hasFiltered) {
+	        console.log('categories in feed list', _this2.state.categories);
 	        var filterArr = [];
-	        for (var i = 0; i < this.props.events.length; i++) {
-	          var event = this.props.events[i];
-	          if (this.state.categories.includes(event.category)) {
+	        for (var i = 0; i < _this2.props.events.length; i++) {
+	          var event = _this2.props.events[i];
+	          if (_this2.state.categories.includes(event.category)) {
 	            filterArr.push(event);
 	          }
 	        }
-	        this.setState({
+	        _this2.setState({
 	          events: filterArr
 	        });
-	        this.setState({ hasFiltered: true });
-	        return _react2.default.createElement('div', null);
-	      }
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -26148,8 +26137,6 @@
 	    key: 'render',
 	    value: function render() {
 
-	      console.log('IN EVENTCARD');
-	      console.log('this event is ', this.props.event.name);
 	      return _react2.default.createElement(
 	        'div',
 	        null,

@@ -8,8 +8,7 @@ constructor(props) {
 
   this.state = {
     events:this.props.events,
-    categories:[],
-    hasFiltered:false
+    categories:[]
   }
 
   // console.log('another log', this.state)
@@ -26,11 +25,7 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
     this.setState({
       categories
     })
-  })
-}
-
-renderEvents(){
-  if (!this.state.hasFiltered) {
+    console.log('categories in feed list', this.state.categories);
     let filterArr = []
     for (var i = 0; i < this.props.events.length; i++) {
       let event = this.props.events[i]
@@ -41,13 +36,10 @@ renderEvents(){
     this.setState({
       events:filterArr
     })
-    this.setState({hasFiltered:true})
-    return (
-      <div></div>
-    )
 
-  }
+  })
 }
+
 
   render() {
 // console.log("feedlist", this.state.events);
