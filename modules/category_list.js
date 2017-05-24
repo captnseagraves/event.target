@@ -6,7 +6,34 @@ class CategoryList extends React.Component {
      super(props)
 
      this.state = {
-       categories: ['art', 'books/ literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
+       categories: ['FOOD TASTING',
+       'THEATER EVENT',
+       'HEALTH/WELLNESS',
+       'ART EVENT',
+       'PARTIES/NIGHTLIFE',
+       'SHOPPING',
+       'COMEDY',
+       'THEATER/DANCE',
+       'MUSIC',
+       'FESTIVAL EVENT',
+       'COMMUNITY',
+       'FOOD/DRINK',
+       'RELIGION',
+       'WORKSHOP',
+       'CLASS EVENT',
+       'ART/FILM',
+       'GAMES',
+       'SPORTS/RECREATION',
+       'FAMILY EVENT',
+       'NETWORKING',
+       'CAUSES',
+       'NEIGHBORHOOD',
+       'MUSIC EVENT',
+       'OTHER',
+       'BOOKS/LITERATURE',
+       'FITNESS',
+       'MEETUP']
+,
        user_cats: []
      }
      this.handler = this.handler.bind(this)

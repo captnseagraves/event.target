@@ -25718,7 +25718,8 @@
 	    var _this = _possibleConstructorReturn(this, (CategoryList.__proto__ || Object.getPrototypeOf(CategoryList)).call(this, props));
 
 	    _this.state = {
-	      categories: ['art', 'books/ literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
+	      categories: ['FOOD TASTING', 'THEATER EVENT', 'HEALTH/WELLNESS', 'ART EVENT', 'PARTIES/NIGHTLIFE', 'SHOPPING', 'COMEDY', 'THEATER/DANCE', 'MUSIC', 'FESTIVAL EVENT', 'COMMUNITY', 'FOOD/DRINK', 'RELIGION', 'WORKSHOP', 'CLASS EVENT', 'ART/FILM', 'GAMES', 'SPORTS/RECREATION', 'FAMILY EVENT', 'NETWORKING', 'CAUSES', 'NEIGHBORHOOD', 'MUSIC EVENT', 'OTHER', 'BOOKS/LITERATURE', 'FITNESS', 'MEETUP'],
+
 	      user_cats: []
 	    };
 	    _this.handler = _this.handler.bind(_this);
@@ -25934,13 +25935,33 @@
 	var Feed = function (_React$Component) {
 	  _inherits(Feed, _React$Component);
 
-	  function Feed() {
+	  function Feed(props) {
 	    _classCallCheck(this, Feed);
 
-	    return _possibleConstructorReturn(this, (Feed.__proto__ || Object.getPrototypeOf(Feed)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (Feed.__proto__ || Object.getPrototypeOf(Feed)).call(this, props));
+
+	    _this.state = {
+	      events: [],
+	      venues: []
+	    };
+	    return _this;
 	  }
 
 	  _createClass(Feed, [{
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      var _this2 = this;
+
+	      fetch("/api/events").then(function (res) {
+	        return res.json();
+	      }).then(function (events) {
+	        _this2.setState({
+	          events: events
+	        });
+	        console.log(_this2.state.events);
+	      });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
