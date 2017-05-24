@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './modules/App';
-import './public/index.css';
 import Calendar from './modules/calendar';
 import CategoryList from './modules/category_list';
 import Feed from './modules/feed';

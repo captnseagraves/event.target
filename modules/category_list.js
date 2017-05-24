@@ -1,5 +1,6 @@
 import React from 'react'
 import CategoryListItem from './category_list_item'
+import { Link } from 'react-router-dom'
 
 class CategoryList extends React.Component {
    constructor(props){
