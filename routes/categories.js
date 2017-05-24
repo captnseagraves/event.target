@@ -4,7 +4,6 @@ const knex = require('../db/knex');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("HEHEHEHEHHEHEHEHH");
   getCategories()
     .then(categories => {
       res.json(categories)

@@ -10,7 +10,6 @@ const knex = require('../db/knex');
 // }
 
 router.post('/', function(req, res, next) {
-  console.log(req.body, 'THIS IS THE BODY');
   insertSubscription(req.body)
     .then(subscription => {
       res.json(subscription)
