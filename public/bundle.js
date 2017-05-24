@@ -21897,18 +21897,18 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'App' },
+	        _react2.default.createElement('div', { className: 'bg' }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container logo' },
-	          _react2.default.createElement('img', { alt: 'logo', className: 'logoScale animated bounceInLeft', src: 'http://i.imgur.com/ygBoDVQ.png' }),
+	          _react2.default.createElement('img', { alt: 'logo', className: 'logoScale animated bounceInLeft', src: 'http://i.imgur.com/NrsCPiW.png' }),
 	          _react2.default.createElement(
 	            'p',
 	            { className: 'slogan animated bounceInLeft' },
-	            'Curated events for a personalized calendar.'
+	            'Curated events for a personalized calendar'
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -21920,8 +21920,8 @@
 	            null,
 	            _react2.default.createElement(
 	              'small',
-	              { className: 'animated flipInY' },
-	              '\xA9 2017 theHAPP.COM ALL RIGHTS RESERVED'
+	              { className: 'animated flipInX' },
+	              '\xA9 2017 eventtarget.com ALL RIGHTS RESERVED'
 	            )
 	          )
 	        )
@@ -22001,15 +22001,7 @@
 	        'div',
 	        null,
 	        this.renderRedirect(),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'App-header' },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'the Happ '
-	          )
-	        ),
+	        _react2.default.createElement('div', { className: 'App-header' }),
 	        _react2.default.createElement(_reactFacebookLogin2.default, {
 	          appId: '100128700575722',
 	          autoLoad: false,
@@ -25669,8 +25661,8 @@
 	        null,
 	        _react2.default.createElement(
 	          "div",
-	          { id: "container" },
-	          "Calendar goes \"aqui\""
+	          { id: "container pageheader" },
+	          "Calendar"
 	        )
 	      );
 	    }
@@ -25718,7 +25710,7 @@
 	    var _this = _possibleConstructorReturn(this, (CategoryList.__proto__ || Object.getPrototypeOf(CategoryList)).call(this, props));
 
 	    _this.state = {
-	      categories: ['art', 'books/ literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
+	      categories: ['art', 'books/literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
 	      user_cats: []
 	    };
 	    _this.handler = _this.handler.bind(_this);
@@ -25780,20 +25772,18 @@
 	        null,
 	        _react2.default.createElement(
 	          'h1',
-	          { className: 'category animated flipInY' },
+	          { className: 'animated flipInY pageheader' },
 	          'Event Categories'
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          { className: 'animated bounceInLeft' },
-	          'something to tell the user about why they pick categories.'
+	          { className: 'animated bounceInLeft catSlogan' },
+	          'click on any event categories to populate your custom calendar'
 	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'categoryItems animated bounceInLeft' },
-	          ' ',
-	          CategoryItems,
-	          ' '
+	          CategoryItems
 	        )
 	      );
 	    }
@@ -25951,7 +25941,7 @@
 	          { id: "container" },
 	          _react2.default.createElement(
 	            "h1",
-	            { className: "feed" },
+	            { className: "pageheader" },
 	            "Event Feed"
 	          )
 	        )

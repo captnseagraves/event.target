@@ -7,7 +7,7 @@ class Calendar extends React.Component {
     return (
 
           <div>
-            <div id="container">Calendar goes "aqui"</div>
+            <div id="container pageheader">Calendar</div>
           </div>
 
        )

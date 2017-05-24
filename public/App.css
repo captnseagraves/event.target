@@ -1,5 +1,6 @@
 body {
     background-color: rgb(235, 235, 235);
+    font-family: 'Dosis', sans-serif;
 }
 
 .App {
@@ -20,7 +21,6 @@ body {
     font-size: large;
 }
 
-
 /*category layout*/
 
 .divvy {
@@ -32,15 +32,17 @@ body {
     text-align: center;
     padding-top: .7em;
     padding-bottom: .7em;
-    background-color: rgb(254, 144, 135);
+    background-color: #80D8FF;
     color: rgb(74, 74, 74);
     transition: all .5s ease-in;
     font-size: 2.5vmin;
+    height: 50px;
 }
 
 .divvy:hover {
-    background-color: rgb(223, 108, 100);
+    background-color: #40C4FF;
     color: #fff;
+    height: 50px;
 }
 
 .catToggle {
@@ -55,14 +57,19 @@ body {
     color: rgb(74, 74, 74);
     transition: all .5s ease-in;
     font-size: 2.5vmin;
-    background-color: rgb(6, 222, 245);
+    color: #eeebeb;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background-color: #3281a4;
+    height: 50px;
 }
 
 
 /*category feed */
 
-.category, .feed {
-    font-family: "Yellowtail", cursive;
+/*page headers*/
+.pageheader {
+  font-family: 'Varela Round', serif;
     font-size: 14vmin;
     color: rgb(74, 74, 74);
     letter-spacing: 5px;
@@ -91,12 +98,17 @@ body {
 /*SLOGAN*/
 
 .slogan {
+  font-size: 4.5vmin;
     color: rgb(74, 74, 74);
     margin-top: -75px;
     -webkit-animation-duration: 1.5s;
     -webkit-animation-delay: .7s;
 }
 
+.catSlogan{
+  font-size: 4.5vmin;
+  margin-top: 5px;
+}
 
 /*category Items*/
 
@@ -127,6 +139,98 @@ body {
     color: rgb(74, 74, 74);
     background-color: rgba(76, 105, 186, 1);
 }
+/*BACKGROUND HOME*/
+.bg {
+  -moz-animation: bg 300s linear infinite;
+  -webkit-animation: bg 300s linear infinite;
+  -ms-animation: bg 300s linear infinite;
+  animation: bg 300s linear infinite;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #348cb2 url("http://www.xpertz.in/images/background-one.jpg") bottom left;
+
+  background-repeat: repeat-x;
+  height: 100%;
+  left: 0;
+  opacity: .2;
+  position: fixed;
+  top: 0;
+}
+
+@-moz-keyframes bg {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@-webkit-keyframes bg {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@-ms-keyframes bg {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@keyframes bg {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+.bg {
+  background-size: 2250px auto;
+  width: 6750px;
+}
 
 
 /*FOOTER*/
@@ -155,13 +259,13 @@ footer {
 }
 
 .responsive-calendar-modal {
-  background-color: rgb(223, 108, 100);
+  background-color: #40C4FF;
   color: rgb(74, 74, 74);
   padding: 1em;
 }
 
 .controls{
-  background-color: rgb(254, 144, 135);
+  background-color: #80D8FF;
   height: 70px;
   padding-top: 15px;
   border-radius: 5px;
@@ -209,21 +313,21 @@ footer {
 }
 
 .responsive-calendar .day.active a {
-  background-color: rgb(223, 108, 100);
+  background-color: #40C4FF;
   color: rgb(74, 74, 74);
 }
 
 .responsive-calendar .day.active a:hover {
-  background-color: rgb(254, 144, 135);
+  background-color: #80D8FF;
 }
 
 .responsive-calendar .day.active .not-current {
-  background-color: rgb(223, 108, 100);
+  background-color: #40C4FF;
   color: rgb(74, 74, 74);
 }
 
 .responsive-calendar .day.active .not-current:hover {
-  background-color: rgb(254, 144, 135);
+  background-color: #80D8FF;
 }
 
 .responsive-calendar .day.not-current a {
@@ -269,11 +373,19 @@ hr{
         margin: 1.1em;
         padding-top: 2em;
         padding-bottom: 2em;
-        background-color: rgb(254, 144, 135);
+        background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
-        font-size: 3vmin;
+        font-size: 2vmin;
     }
+    .catToggle{
+      line-height: 40px;
+      text-align: center;
+      font-size: 2vmin;
+      letter-spacing: 2.2px;
+      font-weight: bold;
+    }
+
 }
 
 
@@ -301,11 +413,19 @@ hr{
         margin: 1.1em;
         padding-top: 2em;
         padding-bottom: 2em;
-        background-color: rgb(254, 144, 135);
+        background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
-        font-size: 3vmin;
+        font-size: 2vmin;
     }
+    .catToggle{
+      line-height: 40px;
+      text-align: center;
+      font-size: 2vmin;
+      letter-spacing: 2.2px;
+      font-weight: bold;
+    }
+
 }
 
 
@@ -336,11 +456,19 @@ hr{
         margin: 1.1em;
         padding-top: 2em;
         padding-bottom: 2em;
-        background-color: rgb(254, 144, 135);
+        background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
-        font-size: 3vmin;
+        font-size: 2vmin;
     }
+    .catToggle{
+      line-height: 40px;
+      text-align: center;
+      font-size: 1.7vmin;
+      letter-spacing: .5px;
+      font-weight: bold;
+    }
+
 }
 
 
@@ -374,11 +502,19 @@ hr{
         margin: 1.1em;
         padding-top: 2em;
         padding-bottom: 2em;
-        background-color: rgb(254, 144, 135);
+        background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
-        font-size: 3vmin;
+        font-size: 1.8vmin;
     }
+    .catToggle{
+      line-height: 40px;
+      text-align: center;
+      font-size: 2vmin;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
 }
 
 
@@ -403,13 +539,22 @@ hr{
     .divvy {
         margin-top: 10px;
         width: 25%;
+        height: 50px;
         margin: 1.1em;
         padding-top: 2em;
         padding-bottom: 2em;
-        background-color: rgb(254, 144, 135);
+        background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2.8vmin;
+        height: 50px;
+      }
+      .catToggle{
+        line-height: 40px;
+        text-align: center;
+        font-size: 2vmin;
+        letter-spacing: 2.2px;
+        font-weight: bold;
     }
 }
 
@@ -435,6 +580,26 @@ hr{
     footer {
         margin-top: 70px;
     }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        height: 50px;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: #80D8FF;
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 2.8vmin;
+        height: 50px;
+      }
+    .catToggle{
+      line-height: 40px;
+      text-align: center;
+      font-size: 2vmin;
+      letter-spacing: 2.2px;
+      font-weight: bold;
+  }
 }
 
 
@@ -459,4 +624,25 @@ hr{
     footer {
         margin-top: 370px;
     }
+    .divvy {
+        margin-top: 10px;
+        width: 25%;
+        height: 50px;
+        margin: 1.1em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        background-color: #80D8FF;
+        color: rgb(74, 74, 74);
+        transition: all .5s ease-in;
+        font-size: 2.8vmin;
+        height: 50px;
+      }
+
+    .catToggle{
+      line-height: 20px;
+      text-align: center;
+      font-size: 2vmin;
+      letter-spacing: 2.2px;
+      font-weight: bold;
+  }
 }

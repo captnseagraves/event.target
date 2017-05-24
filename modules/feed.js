@@ -5,7 +5,7 @@ class Feed extends React.Component {
     return (
           <div>
             <div id="container">
-              <h1 className="feed">Event Feed</h1>
+              <h1 className="pageheader">Event Feed</h1>
             </div>
           </div>
        )

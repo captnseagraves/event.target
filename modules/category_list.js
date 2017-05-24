@@ -6,7 +6,7 @@ class CategoryList extends React.Component {
      super(props)
 
      this.state = {
-       categories: ['art', 'books/ literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
+       categories: ['art', 'books/literature', 'causes', 'community', 'food/drink', 'games', 'religion/spirituality', 'shopping', 'health/wellnes', 'home/garden', 'music', 'network', 'parties/nightlife', 'sporch', 'theatre/dance'],
        user_cats: []
      }
      this.handler = this.handler.bind(this)
@@ -59,9 +59,11 @@ class CategoryList extends React.Component {
      })
     return (
       <div>
-          <h1 className="category animated flipInY">Event Categories</h1>
-          <p className="animated bounceInLeft">something to tell the user about why they pick categories.</p>
-         <div className="categoryItems animated bounceInLeft"> { CategoryItems } </div>
+          <h1 className="animated flipInY pageheader">Event Categories</h1>
+          <p className="animated bounceInLeft catSlogan">click on any event categories to populate your custom calendar</p>
+         <div className="categoryItems animated bounceInLeft">
+            { CategoryItems }
+        </div>
       </div>
        )
   }

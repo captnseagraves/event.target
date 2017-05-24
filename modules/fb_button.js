@@ -36,7 +36,6 @@ renderRedirect(){
       <div>
         {this.renderRedirect()}
         <div className="App-header">
-          <h2>the Happ </h2>
         </div>
         <FacebookLogin
           appId="100128700575722"
