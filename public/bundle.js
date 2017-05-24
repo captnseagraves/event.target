@@ -25544,11 +25544,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-<<<<<<< HEAD
-	    value: true
-=======
 	   value: true
->>>>>>> calendar working, messing with docs
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25559,6 +25555,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -25567,75 +25565,6 @@
 
 	// let events = [{}]
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	    return _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).apply(this, arguments));
-	  }
-
-	  _createClass(Calendar, [{
-	    key: "render",
-	    value: function render() {
-
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement(
-	          "div",
-	          { id: "container pageheader" },
-	          "Calendar"
-	        )
-	      );
-	    }
-	  }]);
-=======
-	var Calendar = function (_React$Component) {
-	    _inherits(Calendar, _React$Component);
-
-	    function Calendar() {
-	        _classCallCheck(this, Calendar);
-
-	        return _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).apply(this, arguments));
-	    }
-
-	    _createClass(Calendar, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement('div', { id: 'calendar' }),
-	                _react2.default.createElement(
-	                    'div',
-	                    null,
-	                    ' testy'
-	                )
-	            );
-	        }
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            $('#calendar').fullCalendar({
-	                header: {
-	                    left: 'prev,next today',
-	                    center: 'title',
-	                    right: 'month,agendaWeek,agendaDay'
-	                },
-	                editable: true,
-	                droppable: true, // this allows things to be dropped onto the calendar
-	                drop: function drop() {
-	                    // is the "remove after drop" checkbox checked?
-	                    if ($('#drop-remove').is(':checked')) {
-	                        // if so, remove the element from the "Draggable Events" list
-	                        $(this).remove();
-	                    }
-	                }
-	            });
-	        }
-	    }]);
->>>>>>> calendar is now rendered in /calendar
-
-	    return Calendar;
-=======
 	var Calendar = function (_React$Component) {
 	   _inherits(Calendar, _React$Component);
 
@@ -25680,9 +25609,9 @@
 	   }, {
 	      key: 'componentDidMount',
 	      value: function componentDidMount() {
-	         (0, _jquery2.default)('#calendar').fullCalendar({
-	            weekends: false, // will hide Saturdays and Sundays
+	         $('#calendar').fullCalendar(_defineProperty({
 	            header: {
+
 	               left: '',
 	               center: 'title',
 	               right: 'prev,next'
@@ -25691,16 +25620,14 @@
 	               listDay: { buttonText: 'list day' },
 	               listWeek: { buttonText: 'list week' }
 	            },
+	            editable: true,
 	            navLinks: true,
-	            events: this.state.events,
-	            editable: true
-
-	         });
+	            events: this.state.events
+	         }, 'editable', true));
 	      }
 	   }]);
 
 	   return Calendar;
->>>>>>> calendar working, messing with docs
 	}(_react2.default.Component);
 
 	exports.default = Calendar;
@@ -25817,18 +25744,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'categoryItems animated bounceInLeft' },
-<<<<<<< HEAD
 	          CategoryItems
-=======
-	          ' ',
-	          CategoryItems,
-	          ' '
-	        ),
-	        _react2.default.createElement(
-	          _reactRouterDom.Link,
-	          { to: '/calendar' },
-	          ' Calendario '
->>>>>>> calendar is now rendered in /calendar
 	        )
 	      );
 	    }
