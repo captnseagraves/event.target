@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
   var es = new EventSearch({
     "lat": 40.0150000,
     "lng": -105.2705000,
-    "accessToken": "EAABbEQehLZBoBAGK9PsOMYWMN4lcnYOBVbDK6YP34Mo0Qd3qZASSX9Ck9XZAMxAv2On9H7g3ZAUEaNUulZA1YlBzk3DNi9qCHgx0PN361p4U8LUEtj9L5va5yMStaii58dXoldkrYmb1qIUyJnkdIJwKRkl3RZBRjk3c9pbwJEvZAG85Ow5C7ZAF",
+    "accessToken": "EAABbEQehLZBoBAAFrBmuUaiY2ipfCF5SzepY7WsVAB8ejBjz3KXgVJG4xK3NWqHr8mZBjxh3wd4ck6VfeyZAfRGFfygppG9dclekt0umVCXyzplZAhsUZCBXcDctZB9HuNGThYpsdJk67Oa7vgxWHpyDV4FoZBrc4NmQhmR75ZCXKWyEKo29hwTW",
     "distance":2500
   });
 
