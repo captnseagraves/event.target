@@ -11,7 +11,7 @@ constructor(props) {
     categories:[],
     hasFiltered:false
   }
-  //
+
   // console.log('another log', this.state)
   // console.log('props', this.props);
 }
@@ -53,7 +53,6 @@ renderEvents(){
 // console.log("feedlist", this.state.events);
     return (
           <div>
-          // {this.renderEvents()}
           <Events
             events={this.state.events}
            />

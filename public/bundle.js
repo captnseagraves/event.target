@@ -25994,7 +25994,7 @@
 	      categories: [],
 	      hasFiltered: false
 	    };
-	    //
+
 	    // console.log('another log', this.state)
 	    // console.log('props', this.props);
 	    return _this;
@@ -26039,8 +26039,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        '// ',
-	        this.renderEvents(),
 	        _react2.default.createElement(_events2.default, {
 	          events: this.state.events
 	        })
