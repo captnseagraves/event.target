@@ -25732,6 +25732,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement('div', { className: 'bgCat' }),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'animated flipInY pageheader' },

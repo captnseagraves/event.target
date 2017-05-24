@@ -153,8 +153,7 @@ body {
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  background: #348cb2 url("http://www.xpertz.in/images/background-one.jpg") bottom left;
-
+  background: rgba(128, 216, 255, 0.5) url("http://www.xpertz.in/images/background-one.jpg") bottom left;
   background-repeat: repeat-x;
   height: 100%;
   left: 0;
@@ -232,6 +231,97 @@ body {
   width: 6750px;
 }
 
+/*BACKGROUND CATEGORY*/
+.bgCat {
+  -moz-animation: bgCat 150s linear infinite;
+  -webkit-animation: bgCat 150s linear infinite;
+  -ms-animation: bgCat 150s linear infinite;
+  animation: bgCat 150s linear infinite;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  background: #348cb2 url("https://www.mountainproject.com/blog/wp-content/uploads/sites/2/2017/03/Noble_Jay_Smith_Voodoo_Child_BW-114.jpg") bottom left;
+  background-repeat: repeat-x;
+  height: 100%;
+  left: 0;
+  opacity: .2;
+  position: fixed;
+  top: 0;
+}
+
+@-moz-keyframes bgCat {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@-webkit-keyframes bgCat {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@-ms-keyframes bgCat {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+@keyframes bgCat {
+  0% {
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+
+  100% {
+    -moz-transform: translate3d(-2250px,0,0);
+    -webkit-transform: translate3d(-2250px,0,0);
+    -ms-transform: translate3d(-2250px,0,0);
+    transform: translate3d(-2250px,0,0);
+  }
+}
+
+.bgCat {
+  background-size: 2250px auto;
+  width: 6750px;
+}
 
 /*FOOTER*/
 

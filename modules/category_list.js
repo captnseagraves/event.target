@@ -87,6 +87,7 @@ class CategoryList extends React.Component {
      })
     return (
       <div>
+          <div className="bgCat"></div>
           <h1 className="animated flipInY pageheader">Event Categories</h1>
           <p className="animated bounceInLeft catSlogan">click on any event categories to populate your custom calendar</p>
          <div className="categoryItems animated bounceInLeft">
