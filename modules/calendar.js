@@ -17,6 +17,7 @@ class Calendar extends React.Component  {
              center: 'title',
              right: 'month,agendaWeek,agendaDay'
          },
+<<<<<<< HEAD
          editable: true,
          droppable: true, // this allows things to be dropped onto the calendar
          drop: function() {
@@ -26,6 +27,26 @@ class Calendar extends React.Component  {
                 $(this).remove();
              }
          }
+
+         navLinks: true,
+         events: [
+				{
+					title: 'All Day Event link: "google.com"',
+					start: '2017-05-01'
+				},
+				{
+					title: 'Long Event',
+					start: '2017-05-07',
+					end: '2017-05-10'
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: '2017-05-09T16:00:00',
+               url:'http://google.com/'
+				}
+			]
+
     })
    }
 
