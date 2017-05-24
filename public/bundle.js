@@ -25952,22 +25952,28 @@
 	  }
 
 	  _createClass(Feed, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
 	      var _this2 = this;
 
+	      console.log('before', this.state.events);
 	      fetch('/api/events').then(function (res) {
 	        return res.json();
 	      }).then(function (events) {
 	        _this2.setState({
 	          events: events
 	        });
-	        console.log("events feed.js", _this2.state.events);
+	        console.log("after", _this2.state.events);
 	      });
 	    }
+	    // <FeedList
+	    //   events={this.state.events}
+	    // />
+
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      console.log('feed', this.state.events);
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -25979,10 +25985,7 @@
 	            { className: 'feed' },
 	            'Event Feed'
 	          )
-	        ),
-	        _react2.default.createElement(_feed_list2.default, {
-	          events: this.state.events
-	        })
+	        )
 	      );
 	    }
 	  }]);
@@ -25997,10 +26000,6 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -26028,13 +26027,16 @@
 	  function FeedList(props) {
 	    _classCallCheck(this, FeedList);
 
-	    // console.log(this.props.events);
 	    var _this = _possibleConstructorReturn(this, (FeedList.__proto__ || Object.getPrototypeOf(FeedList)).call(this, props));
 
 	    _this.state = {
 	      events: _this.props.events,
-	      categories: []
+	      categories: [],
+	      hasFiltered: false
 	    };
+	    //
+	    // console.log('another log', this.state)
+	    // console.log('props', this.props);
 	    return _this;
 	  }
 
@@ -26043,38 +26045,42 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      console.log("events feedlist.js", this.state.events);
 	      var userId = document.cookie.match(/(; )?userId=([^;]*);?/)[2];
 	      fetch('/api/user_category/' + userId).then(function (res) {
 	        return res.json();
 	      }).then(function (categories) {
-	        console.log(categories);
 	        _this2.setState({
 	          categories: categories
 	        });
 	      });
 	    }
 	  }, {
+	    key: 'renderEvents',
+	    value: function renderEvents() {
+	      if (!this.state.hasFiltered) {
+	        var filterArr = [];
+	        for (var i = 0; i < this.props.events.length; i++) {
+	          var event = this.props.events[i];
+	          if (this.state.categories.includes(event.category)) {
+	            filterArr.push(event);
+	          }
+	        }
+	        this.setState({
+	          events: filterArr
+	        });
+	        this.setState({ hasFiltered: true });
+	        return _react2.default.createElement('div', null);
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var filterArr = [];
-	      console.log(this.props.events);
-	      for (var i = 0; i < this.props.events.length; i++) {
-	        var event = this.props.events[i];
-	        console.log(event.category);
-	        if (this.state.categories.includes(event.category)) {
-	          filterArr.push(event);
-	        }
-	      }
-
-	      console.log(filterArr);
-	      this.setState({
-	        events: filterArr
-	      });
-	      return _react2.default.createElement('div', null);
+	      // console.log("feedlist", this.state.events);
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        '// ',
+	        this.renderEvents(),
 	        _react2.default.createElement(_events2.default, {
 	          events: this.state.events
 	        })
@@ -26085,7 +26091,7 @@
 	  return FeedList;
 	}(_react2.default.Component);
 
-	exports.default = FeedList;
+	// export default FeedList
 
 /***/ }),
 /* 231 */
@@ -26127,6 +26133,8 @@
 	  _createClass(Events, [{
 	    key: 'render',
 	    value: function render() {
+	      // console.log("IN EVENTS MODEL");
+	      // console.log('events', this.props.events);
 
 	      var cards = [];
 	      this.props.events.forEach(function (event) {
@@ -26182,6 +26190,7 @@
 	    key: 'render',
 	    value: function render() {
 
+	      console.log('IN EVENTCARD');
 	      return _react2.default.createElement(
 	        'div',
 	        null,

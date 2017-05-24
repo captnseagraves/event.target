@@ -6,49 +6,54 @@ class FeedList extends React.Component {
 constructor(props) {
   super(props)
 
-// console.log(this.props.events);
   this.state = {
-    events : this.props.events,
-    categories : []
+    events:this.props.events,
+    categories:[],
+    hasFiltered:false
   }
+  //
+  // console.log('another log', this.state)
+  // console.log('props', this.props);
 }
 
 
 
 componentDidMount() {
-  console.log("events feedlist.js", this.state.events);
 let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
   fetch(`/api/user_category/${userId}`)
   .then(res => res.json())
   .then(categories => {
-    console.log(categories);
     this.setState({
       categories
     })
   })
 }
 
-
-  render() {
+renderEvents(){
+  if (!this.state.hasFiltered) {
     let filterArr = []
-    console.log(this.props.events);
     for (var i = 0; i < this.props.events.length; i++) {
       let event = this.props.events[i]
-      console.log(event.category);
       if (this.state.categories.includes(event.category)) {
         filterArr.push(event)
       }
     }
-
-    console.log(filterArr);
     this.setState({
       events:filterArr
     })
+    this.setState({hasFiltered:true})
     return (
       <div></div>
     )
+
+  }
+}
+
+  render() {
+// console.log("feedlist", this.state.events);
     return (
           <div>
+          // {this.renderEvents()}
           <Events
             events={this.state.events}
            />
@@ -59,4 +64,4 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
 
  }
 
-export default FeedList
+// export default FeedList
