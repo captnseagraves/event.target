@@ -25576,16 +25576,19 @@
 	      _this.state = {
 	         events: [{
 	            title: 'All Day Event link: "google.com"',
-	            start: '2017-05-01'
+	            start: '2017-05-01',
+	            allDay: false
 	         }, {
 	            title: 'Long Event',
 	            start: '2017-05-07',
-	            end: '2017-05-10'
+	            end: '2017-05-10',
+	            allDay: false
 	         }, {
 	            id: 999,
 	            title: 'Repeating Event',
 	            start: '2017-05-09T16:00:00',
-	            url: 'http://google.com/'
+	            url: 'http://google.com/',
+	            allDay: false
 	         }]
 	      };
 
@@ -25597,8 +25600,9 @@
 	      value: function render() {
 	         return _react2.default.createElement(
 	            'div',
-	            null,
+	            { className: 'container' },
 	            _react2.default.createElement('div', { id: 'calendar' }),
+	            _react2.default.createElement('hr', null),
 	            _react2.default.createElement(
 	               'div',
 	               { id: 'listCal' },
@@ -25613,9 +25617,9 @@
 
 	         $('#calendar').fullCalendar((_$$fullCalendar = {
 	            header: {
-	               left: 'next',
+	               left: 'prev,next',
 	               center: 'title',
-	               right: 'prev'
+	               right: 'month,agendaWeek'
 	            },
 	            defaultView: 'month',
 	            views: {
@@ -25635,10 +25639,6 @@
 	         $('#listCal').fullCalendar(_defineProperty({
 	            header: false,
 	            defaultView: 'listMonth',
-	            views: {
-	               // listDay: { buttonText: 'list day' },
-	               listWeek: { buttonText: 'list week' }
-	            },
 	            editable: true,
 	            navLinks: true,
 	            events: this.state.events
