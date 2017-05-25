@@ -74,11 +74,7 @@ class Calendar extends React.Component  {
              <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
              <ul className="dropdown-menu">
                <li><Link to="/">Home</Link></li>
-<<<<<<< HEAD
-               <li><Link to="/feed">Calendar</Link></li>
-=======
                <li><Link to="/feed">Feed</Link></li>
->>>>>>> master
                <li><Link to="/category_list">Cateories</Link></li>
                <li><Link to="/about">About</Link></li>
                <li><Link to="#">Log Out</Link></li>
