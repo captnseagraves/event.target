@@ -26357,21 +26357,25 @@
 	            console.log(this.props.event);
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'col-sm-6 col-md-4 col-lg-3 mt-4' },
+	                { className: 'col-sm-6 col-md-4 col-lg-3 mt-4 text-center' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'card' },
 	                    _react2.default.createElement('img', { className: 'card-img-top', src: this.props.event.event_cover_picture }),
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
+	                        'button',
+	                        { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, type: 'button', name: 'button' },
+	                        'Add to calendar'
+	                    ),
+	                    _react2.default.createElement(
+	                        'button',
+	                        { type: 'button', name: 'button' },
+	                        'Subscribe to venue'
+	                    ),
+	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'card-block' },
-	                        _react2.default.createElement(
-	                            'figure',
-	                            { className: 'profile' },
-	                            _react2.default.createElement('i', { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, className: 'fa fa-calendar fa-lg', 'aria-hidden': 'true' }),
-	                            _react2.default.createElement('br', null)
-	                        ),
 	                        _react2.default.createElement(
 	                            'h1',
 	                            { className: 'card-title mt-3' },
@@ -42175,79 +42179,12 @@
 	        if (hour === 12) {
 	            hour = 0;
 	        }
-<<<<<<< HEAD
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'col-sm-6 col-md-4 col-lg-3 mt-4 text-center' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'card' },
-	                    _react2.default.createElement('img', { className: 'card-img-top', src: this.props.event.event_cover_picture }),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'card-block' },
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'click the calendar to add event'
-	                        ),
-	                        _react2.default.createElement(
-	                            'figure',
-	                            { className: 'profile' },
-	                            _react2.default.createElement('i', { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, className: 'fa fa-calendar fa-lg', 'aria-hidden': 'true' }),
-	                            _react2.default.createElement('br', null)
-	                        ),
-	                        _react2.default.createElement(
-	                            'h1',
-	                            { className: 'card-title mt-3' },
-	                            this.props.event.event_name
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            this.props.event.category
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'card-text' },
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                this.props.event.description
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'card-footer' },
-	                        _react2.default.createElement(
-	                            'small',
-	                            null,
-	                            this.props.event.start_time,
-	                            ' | ',
-	                            this.props.event.end_time
-	                        ),
-	                        _react2.default.createElement('br', null),
-	                        _react2.default.createElement(
-	                            'small',
-	                            null,
-	                            '*Go to calendar to see events*'
-	                        )
-	                    )
-	                )
-	            );
-=======
 	        if (meridiem === '凌晨' || meridiem === '早上' || meridiem === '上午') {
 	            return hour;
 	        } else if (meridiem === '中午') {
 	            return hour >= 11 ? hour : hour + 12;
 	        } else if (meridiem === '下午' || meridiem === '晚上') {
 	            return hour + 12;
->>>>>>> master
 	        }
 	    },
 	    meridiem : function (hour, minute, isLower) {
