@@ -25710,7 +25710,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement('div', { id: 'calendar' }),
+	        _react2.default.createElement('div', { id: 'calendar', className: 'scrollYouDont' }),
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'fullCalModal', className: 'modal fade' },
