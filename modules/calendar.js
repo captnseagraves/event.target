@@ -6,28 +6,23 @@ class Calendar extends React.Component  {
      super(props)
 
      this.state = {
-        events: [
-          {
-             title: 'All Day Event link: "google.com"',
-             start: '2017-05-01',
-             allDay: false
-          },
-          {
-             title: 'Long Event',
-             start: '2017-05-07',
-             end: '2017-05-10',
-             allDay: false
-          },
-          {
-             id: 999,
-             title: 'Repeating Event',
-             start: '2017-05-09T16:00:00',
-             url:'http://google.com/',
-             allDay: false
-          }
-        ]
+        events: []
      }
 
+ }
+
+ componentWillMount() {
+   fetch(`/api/user_event`,{
+     credentials: 'include'
+   })
+   .then(res => res.json())
+   .then(events => {
+      console.log(events[2]);
+     this.setState({
+       events:events
+     })
+    console.log('this is maybe the state', this.state.events)
+   })
  }
 
 
@@ -40,7 +35,10 @@ class Calendar extends React.Component  {
        </div>
      )
    }
+
+
    componentDidMount() {
+     console.log('test');
     $('#calendar').fullCalendar({
          header: {
              left:   'prev,next',

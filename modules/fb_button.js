@@ -52,7 +52,6 @@ renderRedirect(){
   }
 
   responseFacebook(response) {
-    console.log("THIS IS THE FUCKING RESPONSE")
     console.log(response);
 
     let body = {

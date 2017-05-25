@@ -10,32 +10,49 @@ const knex = require('../db/knex');
 // }
 
 router.post('/', function(req, res, next) {
-  insertSubscription(req.body)
-    .then(subscription => {
-      res.json(subscription)
+  console.log('in user_event', req.body);
+  console.log(req.cookies.userId);
+  let body = {
+    user_id: req.cookies.userId,
+      event_id: req.body.event_id
+  }
+  insertEvent(body)
+    .then(user_event => {
+    console.log('success');
+    res.end()
     })
 });
 
 router.get('/', function(req, res, next) {
-  getSubscriptions()
-    .then(subscriptions => {
-      res.json(subscriptions)
+  getEvents(req.cookies.userId)
+    .then(events => {
+      console.log(events);
+      res.json(events)
     })
 });
 
 router.get('/:id', function(req, res, next) {
-  getSubscriptions(req.params.id)
-    .then(subscription => {
-      if (subscription) {
-        res.json(subscription)
+  getEvents(req.params.id)
+    .then(events => {
+      if (events) {
+        res.json(events)
       } else {
         res.sendStatus(404)
       }
     })
 
 });
-const getSubscriptions = (id) => id ? knex('user_subscription').where('id', id).first() : knex('user_subscription')
 
-const insertSubscription = (body) => knex('user_subscription').returning('*').insert(body)
+const getEvents = (userId) => {
+return knex('user_event')
+  .where('user_id', userId)
+  .join('events', 'events.id', 'user_event.event_id')
+  .join('venues', 'venues.fb_id', 'events.venue_fb_id')
+  .select(knex.raw('user_event.event_id as user_event_id, events.id as event_id, events.name as title, events.category, events.description, events.start_time as start, events.end_time as end,  events.cover_picture as event_cover_picture, events.fb_id, events.venue_fb_id, venues.id as venue_id, venues.name as venue_name, venues.city, venues.state, venues.street, venues.zip, venues.longitude, venues.latitude'))
+}
+
+// .select(knex.raw('user_event.event_id as user_event_id, events.id as event_id, events.name as event_name, events.category, events.description, events.start_time, events.end_time,  events.cover_picture as event_cover_picture, events.fb_id, events.venue_fb_id, venues.id as venue_id, venues.name as venue_name, venues.city, venues.state, venues.street, venues.zip, venues.longitude, venues.latitude'))
+
+const insertEvent = (body) => knex('user_event').returning('*').insert(body)
 
 module.exports = router;
