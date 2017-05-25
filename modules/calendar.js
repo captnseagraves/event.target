@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import {
+    Link
+} from 'react-router-dom'
 
 // let events = [{}]
+
 
 class Calendar extends React.Component  {
    constructor(props){
@@ -54,7 +57,6 @@ class Calendar extends React.Component  {
          // // change the border color just for fun
          // $(this).css('border-color', 'red');
 
-}
    })
 
    console.log("give me a little", this.state.events);
@@ -68,8 +70,8 @@ class Calendar extends React.Component  {
    })
 
    })
- }
-
+ })
+}
 
    render(){
      return (
@@ -111,6 +113,6 @@ class Calendar extends React.Component  {
        </div>
      )
    }
-}
 
+}
 export default Calendar;

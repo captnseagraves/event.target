@@ -26356,7 +26356,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -26378,106 +26378,120 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var EventCard = function (_React$Component) {
-	    _inherits(EventCard, _React$Component);
+	  _inherits(EventCard, _React$Component);
 
-	    function EventCard() {
-	        _classCallCheck(this, EventCard);
+	  function EventCard() {
+	    _classCallCheck(this, EventCard);
 
-	        return _possibleConstructorReturn(this, (EventCard.__proto__ || Object.getPrototypeOf(EventCard)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (EventCard.__proto__ || Object.getPrototypeOf(EventCard)).apply(this, arguments));
+	  }
+
+	  _createClass(EventCard, [{
+	    key: 'clickHandler',
+	    value: function clickHandler(event) {
+	      console.log('were here', event.target.getAttribute('data'));
+	      fetch('/api/user_event', {
+	        method: "POST",
+	        body: JSON.stringify({ event_id: event.target.getAttribute('data') }),
+	        credentials: 'include',
+	        headers: {
+	          'Accept': 'application/json',
+	          'Content-Type': 'application/json'
+	        }
+	      });
 	    }
-
-	    _createClass(EventCard, [{
-	        key: 'clickHandler',
-	        value: function clickHandler(event) {
-	            console.log('were here', event.target.getAttribute('data'));
-	            fetch('/api/user_event', {
-	                method: "POST",
-	                body: JSON.stringify({ event_id: event.target.getAttribute('data') }),
-	                credentials: 'include',
-	                headers: {
-	                    'Accept': 'application/json',
-	                    'Content-Type': 'application/json'
-	                }
-	            });
+	  }, {
+	    key: 'otherClickHandler',
+	    value: function otherClickHandler(event) {
+	      console.log('were here', event.target.getAttribute('data'));
+	      fetch('/api/subscription', {
+	        method: "POST",
+	        body: JSON.stringify({ venue_id: event.target.getAttribute('data') }),
+	        credentials: 'include',
+	        headers: {
+	          'Accept': 'application/json',
+	          'Content-Type': 'application/json'
 	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-	            console.log(this.props.event);
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'col-sm-6 col-md-4 col-lg-3 mt-4 text-center' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'card' },
-	                    _react2.default.createElement('img', { className: 'card-img-top', src: this.props.event.event_cover_picture }),
-	                    _react2.default.createElement('br', null),
-	                    _react2.default.createElement(
-	                        'button',
-	                        { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, type: 'button', name: 'button' },
-	                        'Add to calendar'
-	                    ),
-	                    _react2.default.createElement(
-	                        'button',
-	                        { type: 'button', name: 'button' },
-	                        'Subscribe to venue'
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'card-block' },
-	                        _react2.default.createElement(
-	                            'h1',
-	                            { className: 'card-title mt-3' },
-	                            this.props.event.event_name
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'When: ',
-	                            moment(this.props.event.start_time).format("dddd, MMMM Do YYYY")
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'Where: ',
-	                            this.props.event.venue_name,
-	                            ', ',
-	                            this.props.event.city,
-	                            ', ',
-	                            this.props.event.state
-	                        ),
-	                        _react2.default.createElement(
-	                            'p',
-	                            null,
-	                            'What: ',
-	                            this.props.event.category
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'card-text' },
-	                            _react2.default.createElement(
-	                                'p',
-	                                null,
-	                                this.props.event.description
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'card-footer' },
-	                        _react2.default.createElement(
-	                            'small',
-	                            null,
-	                            'Tom G is a Banana'
-	                        ),
-	                        _react2.default.createElement('br', null)
-	                    )
-	                )
-	            );
-	        }
-	    }]);
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      console.log(this.props.event);
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'col-sm-6 col-md-4 col-lg-3 mt-4 text-center' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'card' },
+	          _react2.default.createElement('img', { className: 'card-img-top', src: this.props.event.event_cover_picture }),
+	          _react2.default.createElement('br', null),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, type: 'button', name: 'button' },
+	            'Add to calendar'
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.otherClickHandler.bind(this), data: this.props.event.venue_id, type: 'button', name: 'button' },
+	            'Subscribe to venue'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'card-block' },
+	            _react2.default.createElement(
+	              'h1',
+	              { className: 'card-title mt-3' },
+	              this.props.event.event_name
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'When: ',
+	              moment(this.props.event.start_time).format("dddd, MMMM Do YYYY")
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Where: ',
+	              this.props.event.venue_name,
+	              ', ',
+	              this.props.event.city,
+	              ', ',
+	              this.props.event.state
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'What: ',
+	              this.props.event.category
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'card-text' },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                this.props.event.description
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'card-footer' },
+	            _react2.default.createElement(
+	              'small',
+	              null,
+	              'Tom G is a Banana'
+	            ),
+	            _react2.default.createElement('br', null)
+	          )
+	        )
+	      );
+	    }
+	  }]);
 
-	    return EventCard;
+	  return EventCard;
 	}(_react2.default.Component);
 
 	exports.default = EventCard;

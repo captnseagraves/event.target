@@ -17,6 +17,19 @@ clickHandler(event) {
   })
 }
 
+otherClickHandler(event) {
+  console.log('were here', event.target.getAttribute('data'));
+  fetch(`/api/subscription`, {
+     method: "POST",
+     body: JSON.stringify({venue_id:event.target.getAttribute('data')}),
+     credentials: 'include',
+     headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+     }
+  })
+}
+
 
   render() {
     console.log(this.props.event);
@@ -26,7 +39,7 @@ clickHandler(event) {
     <div className="card">
         <img className="card-img-top" src={this.props.event.event_cover_picture}></img><br></br>
         <button onClick={this.clickHandler.bind(this)} data={this.props.event.event_id} type="button" name="button">Add to calendar</button>
-        <button type="button" name="button">Subscribe to venue</button>
+        <button onClick={this.otherClickHandler.bind(this)} data={this.props.event.venue_id} type="button" name="button">Subscribe to venue</button>
         <div className="card-block">
             <h1 className="card-title mt-3">{this.props.event.event_name}</h1>
             <p>When: {moment(this.props.event.start_time).format("dddd, MMMM Do YYYY")}</p>

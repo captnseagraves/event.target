@@ -14,11 +14,12 @@ router.post('/', function(req, res, next) {
   console.log(req.cookies.userId);
   let body = {
     user_id: req.cookies.userId,
-      event_id: req.body.venue_id
+      venue_id: req.body.venue_id
   }
   insertSubscription(body)
     .then(subscription => {
-      res.json(subscription)
+  console.log('success');
+  res.end()
     })
 });
 

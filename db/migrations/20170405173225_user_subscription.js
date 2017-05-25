@@ -3,11 +3,11 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('user_subscription', table => {
       table.increments();
-      table.integer('subscriber_id')
+      table.integer('user_id')
         .references('users.id')
         .notNullable();
-      table.integer('subbed_id')
-        .references('users.id')
+      table.integer('venue_id')
+        .references('venues.id')
         .notNullable()
     })
 
