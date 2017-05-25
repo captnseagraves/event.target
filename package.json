@@ -7,7 +7,7 @@
     "start:dev": "webpack-dev-server --inline --content-base public --history-api-fallback",
     "start:prod": "webpack && node ./bin/www",
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:latest"
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run"
   },
   "dependencies": {
     "axios": "^0.15.2",
@@ -45,6 +45,9 @@
     "serve-favicon": "~2.3.0",
     "webpack": "^1.13.3",
     "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": "v7.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
