@@ -32,18 +32,18 @@ class Calendar extends React.Component  {
      return (
        <div>
         <div id="calendar"></div>
-        <div> testy</div>
+        <div id="listCal"> </div>
        </div>
      )
    }
    componentDidMount() {
     $('#calendar').fullCalendar({
          header: {
-
-             left:   '',
+             left:   'next',
              center: 'title',
-             right:  'prev,next'
+             right:  'prev'
          },
+         defaultView: 'month',
          views: {
             listDay: { buttonText: 'list day' },
             listWeek: { buttonText: 'list week' }
@@ -52,8 +52,30 @@ class Calendar extends React.Component  {
          navLinks: true,
          events: this.state.events,
          editable: true,
+         eventClick: function(calEvent, jsEvent, view) {
+            //modal perhaps with desciption and location
+          alert('Event: ' + calEvent.title);
+          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+          // change the border color just for fun
+          $(this).css('border-color', 'red');
+
+}
 
     })
+    $('#listCal').fullCalendar({
+         header: false,
+         defaultView: 'listMonth',
+         views: {
+            // listDay: { buttonText: 'list day' },
+            listWeek: { buttonText: 'list week' }
+         },
+         editable: true,
+         navLinks: true,
+         events: this.state.events,
+         editable: true,
+
+    })
+
    }
 
 }

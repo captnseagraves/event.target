@@ -65,6 +65,10 @@ body {
 }
 
 
+.fc-ltr .fc-list-heading-main {
+   text-align: center;
+}
+
 /*category feed */
 
 /*page headers*/

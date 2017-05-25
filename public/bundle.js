@@ -25601,23 +25601,42 @@
 	            _react2.default.createElement('div', { id: 'calendar' }),
 	            _react2.default.createElement(
 	               'div',
-	               null,
-	               ' testy'
+	               { id: 'listCal' },
+	               ' '
 	            )
 	         );
 	      }
 	   }, {
 	      key: 'componentDidMount',
 	      value: function componentDidMount() {
-	         $('#calendar').fullCalendar(_defineProperty({
-	            header: {
+	         var _$$fullCalendar;
 
-	               left: '',
+	         $('#calendar').fullCalendar((_$$fullCalendar = {
+	            header: {
+	               left: 'next',
 	               center: 'title',
-	               right: 'prev,next'
+	               right: 'prev'
 	            },
+	            defaultView: 'month',
 	            views: {
 	               listDay: { buttonText: 'list day' },
+	               listWeek: { buttonText: 'list week' }
+	            },
+	            editable: true,
+	            navLinks: true,
+	            events: this.state.events
+	         }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
+	            //modal perhaps with desciption and location
+	            alert('Event: ' + calEvent.title);
+	            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	            // change the border color just for fun
+	            $(this).css('border-color', 'red');
+	         }), _$$fullCalendar));
+	         $('#listCal').fullCalendar(_defineProperty({
+	            header: false,
+	            defaultView: 'listMonth',
+	            views: {
+	               // listDay: { buttonText: 'list day' },
 	               listWeek: { buttonText: 'list week' }
 	            },
 	            editable: true,
