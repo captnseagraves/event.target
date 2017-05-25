@@ -11,7 +11,12 @@ const knex = require('../db/knex');
 
 router.post('/', function(req, res, next) {
   console.log(req.body, 'THIS IS THE BODY');
-  insertSubscription(req.body)
+  console.log(req.cookies.userId);
+  let body = {
+    user_id: req.cookies.userId,
+      event_id: req.body.venue_id
+  }
+  insertSubscription(body)
     .then(subscription => {
       res.json(subscription)
     })
