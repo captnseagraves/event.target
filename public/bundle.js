@@ -25751,9 +25751,66 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('div', { className: 'bgCat' }),
-	        _react2.default.createElement('a', { href: '/', title: 'Home Page', className: 'fa fa-arrow-circle-left fa-5x navCatLeft', 'aria-hidden': 'true' }),
-	        _react2.default.createElement('a', { href: '/feed', title: 'Feed Page', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	        _react2.default.createElement(
+	          'nav',
+	          { className: 'navbar' },
+	          _react2.default.createElement('a', { href: '/feed', title: 'Feed Page', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dropdown' },
+	            _react2.default.createElement('div', { className: 'bgCat' }),
+	            _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'dropdown-menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/home' },
+	                  'Home'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/feed' },
+	                  'Feed'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/calendar' },
+	                  'Calendar'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/about' },
+	                  'About'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  'Log Out'
+	                )
+	              )
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'animated flipInY pageheader' },
@@ -25888,7 +25945,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25910,61 +25967,119 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Feed = function (_React$Component) {
-	   _inherits(Feed, _React$Component);
+	  _inherits(Feed, _React$Component);
 
-	   function Feed(props) {
-	      _classCallCheck(this, Feed);
+	  function Feed(props) {
+	    _classCallCheck(this, Feed);
 
-	      var _this = _possibleConstructorReturn(this, (Feed.__proto__ || Object.getPrototypeOf(Feed)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Feed.__proto__ || Object.getPrototypeOf(Feed)).call(this, props));
 
-	      _this.state = {
-	         events: [],
-	         venues: []
-	      };
-	      return _this;
-	   }
+	    _this.state = {
+	      events: [],
+	      venues: []
+	    };
+	    return _this;
+	  }
 
-	   _createClass(Feed, [{
-	      key: 'componentWillMount',
-	      value: function componentWillMount() {
-	         var _this2 = this;
+	  _createClass(Feed, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var _this2 = this;
 
-	         fetch('/api/events').then(function (res) {
-	            return res.json();
-	         }).then(function (events) {
-	            console.log('here');
-	            _this2.setState({
-	               events: events
-	            });
-	         });
-	      }
-	   }, {
-	      key: 'render',
-	      value: function render() {
-	         if (this.state.events.length > 0) {
-	            return _react2.default.createElement(
-	               'div',
-	               null,
-	               _react2.default.createElement(
-	                  'div',
-	                  { id: 'container' },
-	                  _react2.default.createElement('a', { href: '/category_list', title: 'Event Cateories', className: 'fa fa-arrow-circle-left fa-5x navCatLeft', 'aria-hidden': 'true' }),
-	                  _react2.default.createElement('a', { href: '/calendar', title: 'calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	      fetch('/api/events').then(function (res) {
+	        return res.json();
+	      }).then(function (events) {
+	        console.log('here');
+	        _this2.setState({
+	          events: events
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      if (this.state.events.length > 0) {
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'container' },
+	            _react2.default.createElement(
+	              'nav',
+	              { className: 'navbar' },
+	              _react2.default.createElement('a', { href: '/calendar', title: 'Calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'dropdown' },
+	                _react2.default.createElement('div', { className: 'bgCat' }),
+	                _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: 'dropdown-menu' },
 	                  _react2.default.createElement(
-	                     'h1',
-	                     { className: 'pageheader' },
-	                     'Event Feed'
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/home' },
+	                      'Home'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/category_list' },
+	                      'Cateories'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/calendar' },
+	                      'Calendar'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/about' },
+	                      'About'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#' },
+	                      'Log Out'
+	                    )
 	                  )
-	               ),
-	               _react2.default.createElement(_feed_list2.default, { events: this.state.events })
-	            );
-	         } else {
-	            return null;
-	         }
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'h1',
+	              { className: 'pageheader' },
+	              'Event Feed'
+	            )
+	          ),
+	          _react2.default.createElement(_feed_list2.default, { events: this.state.events })
+	        );
+	      } else {
+	        return null;
 	      }
-	   }]);
+	    }
+	  }]);
 
-	   return Feed;
+	  return Feed;
 	}(_react2.default.Component);
 
 	exports.default = Feed;

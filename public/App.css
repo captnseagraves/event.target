@@ -491,8 +491,9 @@ i:hover{
   float: right;
 }
 
-.navCatLeft{
+.navCatLeft, .glyphicon-align-justify{
   float: left;
+  color: #80D8FF;
 }
 
 .navCatRight:hover, .navCatLeft:hover{

@@ -87,9 +87,20 @@ class CategoryList extends React.Component {
      })
     return (
       <div>
-        <div className="bgCat"></div>
-        <a href="/" title="Home Page" className="fa fa-arrow-circle-left fa-5x navCatLeft" aria-hidden="true"></a>
-          <a href="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></a>
+      <nav className="navbar">
+        <a href="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></a>
+        <div className="dropdown">
+          <div className="bgCat"></div>
+            <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
+            <ul className="dropdown-menu">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/feed">Feed</a></li>
+              <li><a href="/calendar">Calendar</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </div>
+        </nav>
           <h1 className="animated flipInY pageheader">Event Categories</h1>
           <p className="animated bounceInLeft catSlogan">click on any event categories to populate your custom calendar</p>
          <div className="categoryItems animated bounceInLeft">
