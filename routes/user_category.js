@@ -18,8 +18,6 @@ const jwt = require('jsonwebtoken');
 
    router.get('/', function(req, res, next) {
      let userId = req.cookies.userId
-
-   console.log('this is the userid',userId);
       knex('user_category')
         .select('category_id')
         .where('user_id', userId)
@@ -38,7 +36,6 @@ const jwt = require('jsonwebtoken');
            .select('categories.name')
            .where('user_category.user_id', req.params.id)
            .then(data => {
-             console.log(data);
               let catNames = []
               data.map((el) => {
                   catNames.push(el.name);
