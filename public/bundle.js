@@ -25540,7 +25540,7 @@
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25580,83 +25580,74 @@
 	  }
 
 	  _createClass(Calendar, [{
-	    key: "componentWillMount",
+	    key: 'componentWillMount',
 	    value: function componentWillMount() {
-	      //  fetch(`/api/user_event`,{
-	      //    credentials: 'include'
-	      //  })
-	      //  .then(res => res.json())
-	      //  .then(events => {
-	      //     console.log(events[2]);
-	      //    this.setState({
-	      //      events:events
-	      //    })
-	      //   console.log('this is maybe the state', this.state.events)
-	      //  })
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "container" },
-	        _react2.default.createElement("div", { id: "calendar" }),
-	        _react2.default.createElement("hr", null),
-	        _react2.default.createElement(
-	          "div",
-	          { id: "listCal" },
-	          " "
-	        )
-	      );
-	    }
-	  }, {
-	    key: "componentDidMount",
-	    value: function componentDidMount() {
-	      var _this2 = this,
-	          _$$fullCalendar;
+	      var _this2 = this;
 
-	      fetch("/api/user_event", {
+	      fetch('/api/user_event', {
 	        credentials: 'include'
 	      }).then(function (res) {
 	        return res.json();
 	      }).then(function (events) {
+	        var _$$fullCalendar;
+
 	        console.log(events[2]);
 	        _this2.setState({
 	          events: events
 	        });
 	        console.log('this is maybe the state', _this2.state.events);
-	      });
 
-	      console.log('test');
-	      $('#calendar').fullCalendar((_$$fullCalendar = {
-	        header: {
-	          left: 'prev,next',
-	          center: 'title',
-	          right: 'month,agendaWeek'
-	        },
-	        defaultView: 'month',
-	        views: {
-	          listDay: { buttonText: 'list day' },
-	          listWeek: { buttonText: 'list week' }
-	        },
-	        editable: true,
-	        navLinks: true,
-	        events: this.state.events
-	      }, _defineProperty(_$$fullCalendar, "editable", true), _defineProperty(_$$fullCalendar, "eventClick", function eventClick(calEvent, jsEvent, view) {
-	        //modal perhaps with desciption and location
-	        alert('Event: ' + calEvent.title);
-	        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	        // change the border color just for fun
-	        $(this).css('border-color', 'red');
-	      }), _$$fullCalendar));
-	      $('#listCal').fullCalendar(_defineProperty({
-	        header: false,
-	        defaultView: 'listMonth',
-	        editable: true,
-	        navLinks: true,
-	        events: this.state.events
-	      }, "editable", true));
+	        console.log('test');
+	        $('#calendar').fullCalendar((_$$fullCalendar = {
+	          header: {
+	            left: 'prev,next',
+	            center: 'title',
+	            right: 'month,agendaWeek'
+	          },
+	          defaultView: 'month',
+	          views: {
+	            listDay: { buttonText: 'list day' },
+	            listWeek: { buttonText: 'list week' }
+	          },
+	          editable: true,
+	          navLinks: true,
+	          events: _this2.state.events
+	        }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
+	          //modal perhaps with desciption and location
+	          alert('Event: ' + calEvent.title);
+	          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	          // change the border color just for fun
+	          $(this).css('border-color', 'red');
+	        }), _$$fullCalendar));
+
+	        console.log("give me a little", _this2.state.events);
+	        $('#listCal').fullCalendar(_defineProperty({
+	          header: false,
+	          defaultView: 'listMonth',
+	          editable: true,
+	          navLinks: true,
+	          events: _this2.state.events
+	        }, 'editable', true));
+	      });
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement('div', { id: 'calendar' }),
+	        _react2.default.createElement('hr', null),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'listCal' },
+	          ' '
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {}
 	  }]);
 
 	  return Calendar;

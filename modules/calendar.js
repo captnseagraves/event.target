@@ -22,6 +22,43 @@ class Calendar extends React.Component  {
        events:events
      })
     console.log('this is maybe the state', this.state.events)
+
+    console.log('test');
+   $('#calendar').fullCalendar({
+        header: {
+            left:   'prev,next',
+            center: 'title',
+            right:  'month,agendaWeek'
+        },
+        defaultView: 'month',
+        views: {
+           listDay: { buttonText: 'list day' },
+           listWeek: { buttonText: 'list week' }
+        },
+        editable: true,
+        navLinks: true,
+        events: this.state.events,
+        editable: true,
+        eventClick: function(calEvent, jsEvent, view) {
+           //modal perhaps with desciption and location
+         alert('Event: ' + calEvent.title);
+         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+         // change the border color just for fun
+         $(this).css('border-color', 'red');
+
+}
+   })
+
+   console.log("give me a little", this.state.events);
+   $('#listCal').fullCalendar({
+        header: false,
+        defaultView: 'listMonth',
+        editable: true,
+        navLinks: true,
+        events: this.state.events,
+        editable: true,
+   })
+
    })
  }
 
@@ -38,39 +75,6 @@ class Calendar extends React.Component  {
 
 
    componentDidMount() {
-     console.log('test');
-    $('#calendar').fullCalendar({
-         header: {
-             left:   'prev,next',
-             center: 'title',
-             right:  'month,agendaWeek'
-         },
-         defaultView: 'month',
-         views: {
-            listDay: { buttonText: 'list day' },
-            listWeek: { buttonText: 'list week' }
-         },
-         editable: true,
-         navLinks: true,
-         events: this.state.events,
-         editable: true,
-         eventClick: function(calEvent, jsEvent, view) {
-            //modal perhaps with desciption and location
-          alert('Event: ' + calEvent.title);
-          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          // change the border color just for fun
-          $(this).css('border-color', 'red');
-
-}
-    })
-    $('#listCal').fullCalendar({
-         header: false,
-         defaultView: 'listMonth',
-         editable: true,
-         navLinks: true,
-         events: this.state.events,
-         editable: true,
-    })
 
    }
 

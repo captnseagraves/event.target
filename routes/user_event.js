@@ -48,7 +48,7 @@ return knex('user_event')
   .where('user_id', userId)
   .join('events', 'events.id', 'user_event.event_id')
   .join('venues', 'venues.fb_id', 'events.venue_fb_id')
-  .select(knex.raw('user_event.event_id as user_event_id, events.id as event_id, events.name as title, events.category, events.description, events.start_time as start, events.end_time as end,  events.cover_picture as event_cover_picture, events.fb_id, events.venue_fb_id, venues.id as venue_id, venues.name as venue_name, venues.city, venues.state, venues.street, venues.zip, venues.longitude, venues.latitude'))
+  .select(knex.raw('user_event.event_id as user_event_id, events.id as event_id, events.name as title, events.category, events.description, events.start_time as start, events.end_time as end, events.cover_picture as event_cover_picture, events.fb_id, events.venue_fb_id, venues.id as venue_id, venues.name as venue_name, venues.city, venues.state, venues.street, venues.zip, venues.longitude, venues.latitude'))
 }
 
 // .select(knex.raw('user_event.event_id as user_event_id, events.id as event_id, events.name as event_name, events.category, events.description, events.start_time, events.end_time,  events.cover_picture as event_cover_picture, events.fb_id, events.venue_fb_id, venues.id as venue_id, venues.name as venue_name, venues.city, venues.state, venues.street, venues.zip, venues.longitude, venues.latitude'))
