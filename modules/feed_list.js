@@ -10,12 +10,7 @@ constructor(props) {
     events:this.props.events,
     categories:[]
   }
-
-  // console.log('another log', this.state)
-  // console.log('props', this.props);
 }
-
-
 
 componentDidMount() {
 let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
@@ -40,7 +35,6 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
   })
 }
 
-
   render() {
 // console.log("feedlist", this.state.events);
     return (
@@ -51,8 +45,6 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
           </div>
        )
   }
-
-
  }
 
 export default FeedList

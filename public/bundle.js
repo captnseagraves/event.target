@@ -21985,7 +21985,7 @@
 	        if (this.state.isFirstTime) {
 	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/category_list' });
 	        } else {
-	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/feed' });
+	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/category_list' });
 	        }
 	      }
 	    }
@@ -22008,15 +22008,12 @@
 	    }
 	  }, {
 	    key: 'handleClicked',
-	    value: function handleClicked() {
-	      // console.log("WE ARE HERE");
-	    }
+	    value: function handleClicked() {}
 	  }, {
 	    key: 'responseFacebook',
 	    value: function responseFacebook(response) {
 	      var _this2 = this;
 
-	      console.log("THIS IS THE FUCKING RESPONSE");
 	      console.log(response);
 
 	      var body = {
@@ -22038,7 +22035,7 @@
 	      }).then(function (user) {
 	        console.log("I AME HERE");
 	        console.log(user);
-	        document.cookie = 'userId = ' + user.id;
+	        document.cookie = 'userId= ' + user.id;
 	        if (user.firstTime) {
 	          _this2.setState({
 	            isSignedIn: true,
@@ -25544,7 +25541,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25552,6 +25549,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouterDom = __webpack_require__(185);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25566,87 +25565,146 @@
 	// let events = [{}]
 
 	var Calendar = function (_React$Component) {
-	   _inherits(Calendar, _React$Component);
+	  _inherits(Calendar, _React$Component);
 
-	   function Calendar(props) {
-	      _classCallCheck(this, Calendar);
+	  function Calendar(props) {
+	    _classCallCheck(this, Calendar);
 
-	      var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
 
-	      _this.state = {
-	         events: [{
-	            title: 'All Day Event link: "google.com"',
-	            start: '2017-05-01',
-	            allDay: false
-	         }, {
-	            title: 'Long Event',
-	            start: '2017-05-07',
-	            end: '2017-05-10',
-	            allDay: false
-	         }, {
-	            id: 999,
-	            title: 'Repeating Event',
-	            start: '2017-05-09T16:00:00',
-	            url: 'http://google.com/',
-	            allDay: false
-	         }]
-	      };
+	    _this.state = {
+	      events: [{
+	        title: 'All Day Event link: "google.com"',
+	        start: '2017-05-01',
+	        allDay: false
+	      }, {
+	        title: 'Long Event',
+	        start: '2017-05-07',
+	        end: '2017-05-10',
+	        allDay: false
+	      }, {
+	        id: 999,
+	        title: 'Repeating Event',
+	        start: '2017-05-09T16:00:00',
+	        url: 'http://google.com/',
+	        allDay: false
+	      }]
+	    };
+	    return _this;
+	  }
 
-	      return _this;
-	   }
-
-	   _createClass(Calendar, [{
-	      key: 'render',
-	      value: function render() {
-	         return _react2.default.createElement(
+	  _createClass(Calendar, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container-fluid containerCal' },
+	        _react2.default.createElement(
+	          'nav',
+	          { className: 'navbar' },
+	          _react2.default.createElement(_reactRouterDom.Link, { to: '/profile', title: 'Calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	          _react2.default.createElement(
 	            'div',
-	            { className: 'container' },
-	            _react2.default.createElement('div', { id: 'calendar' }),
-	            _react2.default.createElement('hr', null),
+	            { className: 'dropdown' },
+	            _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
 	            _react2.default.createElement(
-	               'div',
-	               { id: 'listCal' },
-	               ' '
+	              'ul',
+	              { className: 'dropdown-menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/home' },
+	                  'Home'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/feed' },
+	                  'Calendar'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/category_list' },
+	                  'Cateories'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/about' },
+	                  'About'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '#' },
+	                  'Log Out'
+	                )
+	              )
 	            )
-	         );
-	      }
-	   }, {
-	      key: 'componentDidMount',
-	      value: function componentDidMount() {
-	         var _$$fullCalendar;
+	          )
+	        ),
+	        _react2.default.createElement('div', { id: 'calendar' }),
+	        _react2.default.createElement('hr', null),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'listCal' },
+	          ' '
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _$$fullCalendar;
 
-	         $('#calendar').fullCalendar((_$$fullCalendar = {
-	            header: {
-	               left: 'prev,next',
-	               center: 'title',
-	               right: 'month,agendaWeek'
-	            },
-	            defaultView: 'month',
-	            views: {
-	               listDay: { buttonText: 'list day' },
-	               listWeek: { buttonText: 'list week' }
-	            },
-	            editable: true,
-	            navLinks: true,
-	            events: this.state.events
-	         }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
-	            //modal perhaps with desciption and location
-	            alert('Event: ' + calEvent.title);
-	            alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	            // change the border color just for fun
-	            $(this).css('border-color', 'red');
-	         }), _$$fullCalendar));
-	         $('#listCal').fullCalendar(_defineProperty({
-	            header: false,
-	            defaultView: 'listMonth',
-	            editable: true,
-	            navLinks: true,
-	            events: this.state.events
-	         }, 'editable', true));
-	      }
-	   }]);
+	      $('#calendar').fullCalendar((_$$fullCalendar = {
+	        header: {
+	          left: 'prev,next',
+	          center: 'title',
+	          right: 'month,agendaWeek'
+	        },
+	        defaultView: 'month',
+	        views: {
+	          listDay: { buttonText: 'list day' },
+	          listWeek: { buttonText: 'list week' }
+	        },
+	        editable: true,
+	        navLinks: true,
+	        events: this.state.events
+	      }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
+	        //modal perhaps with desciption and location
+	        alert('Event: ' + calEvent.title);
+	        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	        // change the border color just for fun
+	        $(this).css('border-color', 'red');
+	      }), _$$fullCalendar));
 
-	   return Calendar;
+	      $('#listCal').fullCalendar(_defineProperty({
+	        header: false,
+	        defaultView: 'listMonth',
+	        editable: true,
+	        navLinks: true,
+	        events: this.state.events
+	      }, 'editable', true));
+	    }
+	  }]);
+
+	  return Calendar;
 	}(_react2.default.Component);
 
 	exports.default = Calendar;
@@ -25748,10 +25806,70 @@
 	          handler: _this4.handler
 	        });
 	      });
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('div', { className: 'bgCat' }),
+	        _react2.default.createElement(
+	          'nav',
+	          { className: 'navbar' },
+	          _react2.default.createElement(_reactRouterDom.Link, { to: '/feed', title: 'Feed Page', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dropdown' },
+	            _react2.default.createElement('div', { className: 'bgCat' }),
+	            _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'dropdown-menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/home' },
+	                  'Home'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/feed' },
+	                  'Feed'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/calendar' },
+	                  'Calendar'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/about' },
+	                  'About'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '#' },
+	                  'Log Out'
+	                )
+	              )
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'animated flipInY pageheader' },
@@ -25899,6 +26017,8 @@
 
 	var _feed_list2 = _interopRequireDefault(_feed_list);
 
+	var _reactRouterDom = __webpack_require__(185);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25947,14 +26067,71 @@
 	            'div',
 	            { id: 'container' },
 	            _react2.default.createElement(
+	              'nav',
+	              { className: 'navbar' },
+	              _react2.default.createElement(_reactRouterDom.Link, { to: '/calendar', title: 'Calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'dropdown' },
+	                _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: 'dropdown-menu' },
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouterDom.Link,
+	                      { to: '/home' },
+	                      'Home'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouterDom.Link,
+	                      { to: '/category_list' },
+	                      'Cateories'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouterDom.Link,
+	                      { to: '/calendar' },
+	                      'Calendar'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouterDom.Link,
+	                      { to: '/about' },
+	                      'About'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      _reactRouterDom.Link,
+	                      { to: '#' },
+	                      'Log Out'
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
 	              'h1',
 	              { className: 'pageheader' },
 	              'Event Feed'
 	            )
 	          ),
-	          _react2.default.createElement(_feed_list2.default, {
-	            events: this.state.events
-	          })
+	          _react2.default.createElement(_feed_list2.default, { events: this.state.events })
 	        );
 	      } else {
 	        return null;
@@ -26009,9 +26186,6 @@
 	      events: _this.props.events,
 	      categories: []
 	    };
-
-	    // console.log('another log', this.state)
-	    // console.log('props', this.props);
 	    return _this;
 	  }
 
@@ -26099,9 +26273,6 @@
 	  _createClass(Events, [{
 	    key: 'render',
 	    value: function render() {
-	      // console.log("IN EVENTS MODEL");
-	      // console.log('events', this.props.events);
-
 	      var cards = [];
 	      this.props.events.forEach(function (event) {
 	        cards.push(_react2.default.createElement(_eventCard2.default, { event: event, key: event.id }));
@@ -26126,7 +26297,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -26144,83 +26315,82 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var EventCard = function (_React$Component) {
-	    _inherits(EventCard, _React$Component);
+	  _inherits(EventCard, _React$Component);
 
-	    function EventCard() {
-	        _classCallCheck(this, EventCard);
+	  function EventCard() {
+	    _classCallCheck(this, EventCard);
 
-	        return _possibleConstructorReturn(this, (EventCard.__proto__ || Object.getPrototypeOf(EventCard)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (EventCard.__proto__ || Object.getPrototypeOf(EventCard)).apply(this, arguments));
+	  }
+
+	  _createClass(EventCard, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "col-sm-6 col-md-4 col-lg-3 mt-4" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "card" },
+	          _react2.default.createElement("img", { className: "card-img-top", src: this.props.event.event_cover_picture }),
+	          _react2.default.createElement("br", null),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "card-block" },
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "click the calendar to add event"
+	            ),
+	            _react2.default.createElement(
+	              "figure",
+	              { className: "profile" },
+	              _react2.default.createElement("i", { className: "fa fa-calendar fa-lg", "aria-hidden": "true" }),
+	              _react2.default.createElement("br", null)
+	            ),
+	            _react2.default.createElement(
+	              "h1",
+	              { className: "card-title mt-3" },
+	              this.props.event.name
+	            ),
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              this.props.event.category
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "card-text" },
+	              _react2.default.createElement(
+	                "p",
+	                null,
+	                this.props.event.description
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "card-footer" },
+	            _react2.default.createElement(
+	              "small",
+	              null,
+	              this.props.event.start_time,
+	              " | ",
+	              this.props.event.end_time
+	            ),
+	            _react2.default.createElement("br", null),
+	            _react2.default.createElement(
+	              "small",
+	              null,
+	              "*Go to calendar to see events*"
+	            )
+	          )
+	        )
+	      );
 	    }
+	  }]);
 
-	    _createClass(EventCard, [{
-	        key: "render",
-	        value: function render() {
-	            console.log(this.props.event);
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "col-sm-6 col-md-4 col-lg-3 mt-4" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "card" },
-	                    _react2.default.createElement("img", { className: "card-img-top", src: this.props.event.event_cover_picture }),
-	                    _react2.default.createElement("br", null),
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "card-block" },
-	                        _react2.default.createElement(
-	                            "p",
-	                            null,
-	                            "click the calendar to add event"
-	                        ),
-	                        _react2.default.createElement(
-	                            "figure",
-	                            { className: "profile" },
-	                            _react2.default.createElement("i", { className: "fa fa-calendar fa-lg", "aria-hidden": "true" }),
-	                            _react2.default.createElement("br", null)
-	                        ),
-	                        _react2.default.createElement(
-	                            "h1",
-	                            { className: "card-title mt-3" },
-	                            this.props.event.name
-	                        ),
-	                        _react2.default.createElement(
-	                            "p",
-	                            null,
-	                            this.props.event.category
-	                        ),
-	                        _react2.default.createElement(
-	                            "div",
-	                            { className: "card-text" },
-	                            _react2.default.createElement(
-	                                "p",
-	                                null,
-	                                this.props.event.description
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "card-footer" },
-	                        _react2.default.createElement(
-	                            "small",
-	                            null,
-	                            this.props.event.start_time,
-	                            " | ",
-	                            this.props.event.end_time
-	                        ),
-	                        _react2.default.createElement("br", null),
-	                        _react2.default.createElement(
-	                            "small",
-	                            null,
-	                            "*Go to calendar to see events*"
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return EventCard;
+	  return EventCard;
 	}(_react2.default.Component);
 
 	exports.default = EventCard;
