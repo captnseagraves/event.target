@@ -70,6 +70,14 @@
 
 	var _feed2 = _interopRequireDefault(_feed);
 
+	var _about = __webpack_require__(234);
+
+	var _about2 = _interopRequireDefault(_about);
+
+	var _userprofile = __webpack_require__(235);
+
+	var _userprofile2 = _interopRequireDefault(_userprofile);
+
 	var _reactRouterDom = __webpack_require__(185);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -83,7 +91,9 @@
 	    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _App2.default }),
 	    _react2.default.createElement(_reactRouterDom.Route, { path: '/calendar', component: _calendar2.default }),
 	    _react2.default.createElement(_reactRouterDom.Route, { path: '/category_list', component: _category_list2.default }),
-	    _react2.default.createElement(_reactRouterDom.Route, { path: '/feed', component: _feed2.default })
+	    _react2.default.createElement(_reactRouterDom.Route, { path: '/feed', component: _feed2.default }),
+	    _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _about2.default }),
+	    _react2.default.createElement(_reactRouterDom.Route, { path: '/userprofile', component: _userprofile2.default })
 	  )
 	), document.getElementById('root'));
 
@@ -25615,7 +25625,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '/home' },
+	                  { to: '/' },
 	                  'Home'
 	                )
 	              ),
@@ -25625,7 +25635,7 @@
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
 	                  { to: '/feed' },
-	                  'Calendar'
+	                  'Feed'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -26753,6 +26763,567 @@
 	  }
 	}
 
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouterDom = __webpack_require__(185);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var About = function (_React$Component) {
+	    _inherits(About, _React$Component);
+
+	    function About() {
+	        _classCallCheck(this, About);
+
+	        return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).apply(this, arguments));
+	    }
+
+	    _createClass(About, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'container-fluid text center' },
+	                _react2.default.createElement(
+	                    'nav',
+	                    { className: 'navbar' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'dropdown' },
+	                        _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'dropdown-menu' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _reactRouterDom.Link,
+	                                    { to: '/home' },
+	                                    'Home'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _reactRouterDom.Link,
+	                                    { to: '/feed' },
+	                                    'Feed'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _reactRouterDom.Link,
+	                                    { to: '/category_list' },
+	                                    'Cateories'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _reactRouterDom.Link,
+	                                    { to: '/calendar' },
+	                                    'Calendar'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _reactRouterDom.Link,
+	                                    { to: '#' },
+	                                    'Log Out'
+	                                )
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'photorow' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        { className: 'pageheader' },
+	                        'About Us'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img joshcard' },
+	                                        _react2.default.createElement('img', { className: 'josh top-img', src: 'http://i.imgur.com/zgl1zC4.jpg' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Joshua Lerner'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Joshua is a Naropa University grad that likes space and hydro flasks.'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img' },
+	                                        _react2.default.createElement('img', { className: 'matt top-img', src: 'http://i.imgur.com/jhvLYAB.jpg' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Matthew Albrecht'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Driven and self-motivated web developer with a degree in Computer Science from the University of Colorado. Analytical and detail-oriented learner with a passion for data and design with a desire to take on challenges in a fast-paced environment.'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img' },
+	                                        _react2.default.createElement('img', { className: 'kevin top-img', src: 'http://i.imgur.com/EtaVBj7.jpg' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Kevin Seagraves'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Full-Stack Developer. Curator of code, user experience, and customer satisfaction. Agile, TDD Developer. Languages: HTML5, CSS3, JavaScript, jQuery, Bootstrap, Materialize, Node.js, SQL, PostgreSQL, Angular.js, Ruby on Rails'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img' },
+	                                        _react2.default.createElement('img', { className: 'nico top-img', src: 'http://i.imgur.com/ZRxr2sp.jpg' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Nicolas Roldos'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Nico is a full-stack web developer learning and most relevant skills in the web development software industry. He have a lot of experience specifically in applying G.I.S. and location-based data to web-based software, and easily deployable mobile-apps.'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: '', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img' },
+	                                        _react2.default.createElement('img', { className: 'tom top-img', src: 'http://i.imgur.com/OkHubaP.png' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Thomas Garrison'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Full-Stack developer, specializing in Front End Development and UI Design, Tom first fell in love with programming when he was in later elementary school. Tom have a passion for the outdoors and bluegrass music.'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'https://github.com/TomGarrison', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'https://www.linkedin.com/in/thomas-garrison/', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'www.tomgarrisondevelops.surge.sh', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-xs-6 col-sm-4' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'panel panel-default clicable' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'panel-body' },
+	                                    _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'top-img' },
+	                                        _react2.default.createElement('img', { className: 'pete top-img', src: 'https://scontent.xx.fbcdn.net/v/t31.0-8/17917101_10102218322795375_7381878680585521639_o.jpg?oh=0d88d6c481231a89e7e3d4206706cf0f&oe=59AE3A94' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'h1',
+	                                        null,
+	                                        'Pete Silva PM'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        'p',
+	                                        null,
+	                                        'Both an artist and a scientist, Pete has been honing his skills on the web since 1999, and skills with interactive media since 2005. He\u2019s seen the web evolve from hand-coded HTML pages to fully AJAX-enabled, database-backed web applications. DM me.'
+	                                    ),
+	                                    _react2.default.createElement('br', null),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'https://soundcloud.com/petesilva', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'https://soundcloud.com/petesilva', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        _reactRouterDom.Link,
+	                                        { to: 'https://soundcloud.com/petesilva', target: '_blank' },
+	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return About;
+	}(_react2.default.Component);
+
+	exports.default = About;
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouterDom = __webpack_require__(185);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Userprofile = function (_React$Component) {
+	  _inherits(Userprofile, _React$Component);
+
+	  function Userprofile(props) {
+	    _classCallCheck(this, Userprofile);
+
+	    var _this = _possibleConstructorReturn(this, (Userprofile.__proto__ || Object.getPrototypeOf(Userprofile)).call(this, props));
+
+	    _this.state = {
+	      user: [],
+	      user_category: []
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Userprofile, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var _this2 = this;
+
+	      var userId = document.cookie.match(/(; )?userId=([^;]*);?/)[2];
+	      fetch('/api/users/' + userId).then(function (res) {
+	        return res.json();
+	      }).then(function (user) {
+	        _this2.setState({
+	          user: user
+	        });
+	      });
+	      fetch('/api/user_category/' + userId).then(function (res) {
+	        return res.json();
+	      }).then(function (categories) {
+	        _this2.setState({
+	          user_category: categories
+	        });
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container-fluid text center' },
+	        _react2.default.createElement(
+	          'nav',
+	          { className: 'navbar' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dropdown' },
+	            _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'dropdown-menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/home' },
+	                  'Home'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/category_list' },
+	                  'Cateories'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/feed' },
+	                  'Feed'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/calendar' },
+	                  'Calendar'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '/about' },
+	                  'About'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  _reactRouterDom.Link,
+	                  { to: '#' },
+	                  'Log Out'
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-xs-6 col-sm-4 userproCon' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'panel panel-default clicable' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'panel-body' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'top-img' },
+	                _react2.default.createElement('img', { className: 'tom top-img', src: 'http://i.imgur.com/OkHubaP.png' })
+	              ),
+	              _react2.default.createElement(
+	                'h1',
+	                null,
+	                this.state.user.name
+	              ),
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                this.state.user_category
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Userprofile;
+	}(_react2.default.Component);
+
+	exports.default = Userprofile;
 
 /***/ })
 /******/ ]);
