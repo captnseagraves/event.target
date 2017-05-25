@@ -1,10 +1,7 @@
 import React from 'react';
-import {
-    Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // let events = [{}]
-
 
 class Calendar extends React.Component  {
    constructor(props){
@@ -20,63 +17,68 @@ class Calendar extends React.Component  {
      credentials: 'include'
    })
    .then(res => res.json())
-   .then(events => {
-      console.log(events[2]);
-     this.setState({
-       events:events
+   .then(single_events => {
+     fetch(`/api/subscription`, {
+         credentials: 'include'
      })
-    console.log('this is maybe the state', this.state.events)
+     .then(res => res.json())
+     .then(venue_subs => {
+       this.setState({
+           events: [...single_events, ...venue_subs]
+       })
 
-    console.log('test');
-   $('#calendar').fullCalendar({
-        header: {
-            left:   'prev,next',
-            center: 'title',
-            right:  'month,agendaWeek'
-        },
-        defaultView: 'month',
-        views: {
-           listDay: { buttonText: 'list day' },
-           listWeek: { buttonText: 'list week' }
-        },
-        editable: true,
-        navLinks: true,
-        events: this.state.events,
-        editable: true,
-        eventClick: function(calEvent, jsEvent, view) {
-           $('#modalTitle').html(calEvent.title);
-           $('#modalBody').html(calEvent.description);
-           $('#picaroo').attr('src',calEvent.event_cover_picture);
-           $('#whereWolf').html(`Venue: ${calEvent.venue_name}`);
-           $('#addy').html(`Address: ${calEvent.street} \n ${calEvent.city}  ${calEvent.state}  ${calEvent.zip}`);
-           $('#fullCalModal').modal();
+       console.log('this is maybe the state', this.state.events)
 
-           //modal perhaps with desciption and location
-         // alert('Event: ' + calEvent.title);
-         // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-         // // change the border color just for fun
-         // $(this).css('border-color', 'red');
+       console.log('test');
+      $('#calendar').fullCalendar({
+           header: {
+               left:   'prev,next',
+               center: 'title',
+               right:  'month,agendaWeek'
+           },
+           defaultView: 'month',
+           views: {
+              listDay: { buttonText: 'list day' },
+              listWeek: { buttonText: 'list week' }
+           },
+           editable: true,
+           navLinks: true,
+           events: this.state.events,
+           editable: true,
+           eventClick: function(calEvent, jsEvent, view) {
+             $('#modalTitle').html(calEvent.title);
+             $('#modalBody').html(calEvent.description);
+             $('#picaroo').attr('src',calEvent.event_cover_picture);
+             $('#whereWolf').html(`Venue: ${calEvent.venue_name}`);
+             $('#addy').html(`Address: ${calEvent.street} \n ${calEvent.city}  ${calEvent.state}  ${calEvent.zip}`);
+             $('#fullCalModal').modal();
+
+     }
+      })
+
+      console.log("give me a little", this.state.events);
+      $('#listCal').fullCalendar({
+           header: false,
+           defaultView: 'listMonth',
+           editable: true,
+           navLinks: true,
+           events: this.state.events,
+           editable: true,
+      })
 
    })
 
-   console.log("give me a little", this.state.events);
-   $('#listCal').fullCalendar({
-        header: false,
-        defaultView: 'listMonth',
-        editable: true,
-        navLinks: true,
-        events: this.state.events,
-        editable: true,
-   })
 
    })
- })
-}
+ }
+
+
 
    render(){
      return (
-       <div className="container-fluid containerCal" id="conCal">
+       <div className="container-fluid containerCal">
        <nav className="navbar">
+         <Link to="/userprofile" title="User Profile" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
          <div className="dropdown">
              <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
              <ul className="dropdown-menu">
