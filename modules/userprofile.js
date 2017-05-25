@@ -41,7 +41,7 @@ componentWillMount(){
             <li><Link to="/feed">Feed</Link></li>
             <li><Link to="/calendar">Calendar</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><Link to="#">Log Out</Link></li>
+            <li><Link to="/">Log Out</Link></li>
           </ul>
         </div>
       </nav>

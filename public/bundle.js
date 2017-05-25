@@ -25648,7 +25648,6 @@
 	        _react2.default.createElement(
 	          'nav',
 	          { className: 'navbar' },
-	          _react2.default.createElement(_reactRouterDom.Link, { to: '/userprofile', title: 'User Profile', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'dropdown' },
@@ -25697,7 +25696,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '#' },
+	                  { to: '/' },
 	                  'Log Out'
 	                )
 	              )
@@ -25873,7 +25872,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '#' },
+	                  { to: '/' },
 	                  'Log Out'
 	                )
 	              )
@@ -26128,7 +26127,7 @@
 	                    null,
 	                    _react2.default.createElement(
 	                      _reactRouterDom.Link,
-	                      { to: '#' },
+	                      { to: '/' },
 	                      'Log Out'
 	                    )
 	                  )
@@ -42664,7 +42663,7 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouterDom.Link,
-	                                    { to: '/home' },
+	                                    { to: '/' },
 	                                    'Home'
 	                                )
 	                            ),
@@ -42700,7 +42699,7 @@
 	                                null,
 	                                _react2.default.createElement(
 	                                    _reactRouterDom.Link,
-	                                    { to: '#' },
+	                                    { to: '/' },
 	                                    'Log Out'
 	                                )
 	                            )
@@ -43141,7 +43140,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '#' },
+	                  { to: '/' },
 	                  'Log Out'
 	                )
 	              )
