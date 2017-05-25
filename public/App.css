@@ -1,3 +1,57 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body {
+  background-image: url('images/crossword.png');
+}
+
 body {
     background-color: rgb(235, 235, 235);
     font-family: 'Dosis', sans-serif;
@@ -79,7 +133,6 @@ body {
     color: rgb(74, 74, 74);
     letter-spacing: 5px;
 }
-
 
 /*LOGO*/
 
@@ -335,112 +388,14 @@ footer {
 }
 
 /*CALENDAR*/
-.icon-chevron {
-  display: block;
-  width: 15px;
-  height: 22px;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAWCAMAAAAo0TYrAAAAElBMVEX///8AAAAAAAAAAAAAAAAAAABknMCaAAAABXRSTlMAEHCg0O5XV0MAAAAzSURBVHgBYwACJkYGZMDMysKIwmUFCyC4KAIsrKgCjPQQQPCpzUX4B9O/mOGBGV7o4QkA5zcCv3HiEZgAAAAASUVORK5CYII=');
+
+.fc-unthemed td.fc-today{
+  background-color: rgba(81, 146, 181, .2);
 }
 
-.icon-chevron-rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+.containerCal{
+  font-family: 'Varela Round', serif;
 }
-
-.page {
-  width: 500px;
-  margin: 0 auto;
-  padding: 1em;
-}
-
-.responsive-calendar-modal {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-  padding: 1em;
-}
-
-.controls{
-  background-color: #80D8FF;
-  height: 70px;
-  padding-top: 15px;
-  border-radius: 5px;
-}
-
-.responsive-calendar .controls {
-  text-align: center;
-}
-
-.responsive-calendar .controls a {
-  cursor: pointer;
-}
-
-.responsive-calendar .controls h4 {
-  display: inline;
-}
-
-.responsive-calendar .day-headers,
-.responsive-calendar .days {
-  font-size: 0;
-}
-
-.responsive-calendar .day {
-  display: inline-block;
-  position: relative;
-  font-size: 14px;
-  width: 14.285714285714286%;
-  text-align: center;
-}
-
-.responsive-calendar .day a {
-  color: #000000;
-  display: block;
-  cursor: pointer;
-  padding: 20% 0 20% 0;
-}
-
-.responsive-calendar .day a:hover {
-  background-color: #eee;
-  text-decoration: none;
-}
-
-.responsive-calendar .day.header {
-  border-bottom: 1px rgb(74, 74, 74) solid;
-}
-
-.responsive-calendar .day.active a {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day.active a:hover {
-  background-color: #80D8FF;
-}
-
-.responsive-calendar .day.active .not-current {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day.active .not-current:hover {
-  background-color: #80D8FF;
-}
-
-.responsive-calendar .day.not-current a {
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day .badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  z-index: 1;
-}
-
-hr{
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 
 /*drop down menu*/
 .glyphicon{
@@ -449,7 +404,7 @@ hr{
 }
 
 .dropdown-menu{
-  background-color: rgba(81, 146, 181, .2);
+  background-color: rgba(81, 146, 181, .95);
   font-size: 3vmin;
   border: none;
   float: right;
@@ -468,6 +423,7 @@ hr{
   width: 400px;
 }
 
+
 i{
   margin: 5px 5px;
   cursor: pointer;
@@ -476,6 +432,49 @@ i{
 
 i:hover{
   color: #40C4FF;
+}
+
+
+.navCatRight, .navCatLeft{
+  position: relative;
+  color: #80D8FF;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 1s ease;
+}
+
+.navCatRight{
+  float: right;
+}
+
+.navCatLeft, .glyphicon-align-justify{
+  float: left;
+  color: #80D8FF;
+}
+
+.navCatRight:hover, .navCatLeft:hover{
+  text-decoration: none;
+  color: #40C4FF;
+}
+
+/*CARD FOR ABOUT US*/
+.top-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.top-img img{
+  border-radius: 5px;
+  width: 100%;
+  height: 460px;
+}
+
+.panel{
+  padding: 0;
+  height: 630px;
+  position: relative;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
 }
 
 /*CARD FOR ABOUT US*/
@@ -487,13 +486,14 @@ i:hover{
 
 .panel{
   padding: 0;
-  height: 680px;
+  height: 750px;
   position: relative;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
 }
 
 /*CARDS FOR FEED*/
 .card {
+    background-color: rgb(241, 241, 241);
     font-size: 1em;
     padding: 0;
     border: none;
@@ -581,6 +581,15 @@ i:hover{
     vertical-align: top;
 }
 
+/*USER PRO*/
+
+.userproCon{
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /*MEDIA QUERYS*/
 
 
@@ -620,7 +629,12 @@ i:hover{
       letter-spacing: 2.2px;
       font-weight: bold;
     }
-
+    .col-xs-6 {
+      width: 100%
+    }
+    .col-xs-6 {
+      width: 100%
+    }
 }
 
 
@@ -659,6 +673,9 @@ i:hover{
       font-size: 2vmin;
       letter-spacing: 2.2px;
       font-weight: bold;
+    }
+    .col-xs-6 {
+      width: 100%
     }
 
 }
@@ -702,6 +719,9 @@ i:hover{
       font-size: 1.7vmin;
       letter-spacing: .5px;
       font-weight: bold;
+    }
+    .col-xs-6 {
+      width: 100%
     }
 
 }
@@ -749,6 +769,9 @@ i:hover{
       letter-spacing: 1px;
       font-weight: bold;
     }
+    .col-xs-6 {
+      width: 100%
+    }
 
 }
 
@@ -790,6 +813,9 @@ i:hover{
         font-size: 2vmin;
         letter-spacing: 2.2px;
         font-weight: bold;
+    }
+    .col-xs-6 {
+      width: 100%
     }
 }
 

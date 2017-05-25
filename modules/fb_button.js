@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 // import $ from 'jquery'
 
 
-
 export default class FbButton extends React.Component {
   constructor(props){
     super(props)
@@ -23,7 +22,7 @@ renderRedirect(){
       )
     } else {
       return(
-        <Redirect to='/feed'></Redirect>
+        <Redirect to='/category_list'></Redirect>
       )
     }
   }
@@ -48,11 +47,9 @@ renderRedirect(){
   }
 
   handleClicked() {
-    // console.log("WE ARE HERE");
   }
 
   responseFacebook(response) {
-    console.log("THIS IS THE FUCKING RESPONSE")
     console.log(response);
 
     let body = {
@@ -74,7 +71,7 @@ renderRedirect(){
     .then(user => {
       console.log("I AME HERE");
       console.log(user);
-      document.cookie = `userId = ${user.id}`
+      document.cookie = `userId= ${user.id}`
       if (user.firstTime) {
         this.setState({
           isSignedIn: true,
@@ -85,10 +82,6 @@ renderRedirect(){
           isSignedIn: true
         })
       }
-
     })
-
-
   }
-
 }

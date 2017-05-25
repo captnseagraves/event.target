@@ -21,8 +21,6 @@ class CategoryListItem  extends React.Component{
       return el
    }
 
-
-
    catSubmit(event) {
       event.preventDefault()
 
@@ -55,9 +53,6 @@ class CategoryListItem  extends React.Component{
          .then((lemon) => this.props.handler())
       }
    }
-
-
 }
-
 
 export default CategoryListItem
