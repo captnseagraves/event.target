@@ -3,11 +3,10 @@ import React from 'react'
 class EventCard extends React.Component {
 
   render() {
-// console.log(this.props.event);
     return (
 <div className="col-sm-6 col-md-4 col-lg-3 mt-4">
   <div className="card">
-    <img className="card-img-top" src={this.props.event.cover_picture}></img><br></br>
+    <img className="card-img-top" src={this.props.event.event_cover_picture}></img><br></br>
     <div className="card-block">
       <p>click the calendar to add event</p>
       <figure className="profile">
@@ -27,7 +26,6 @@ class EventCard extends React.Component {
 </div>
        )
   }
-
- }
+}
 
 export default EventCard

@@ -334,112 +334,13 @@ footer {
 }
 
 /*CALENDAR*/
-.icon-chevron {
-  display: block;
-  width: 15px;
-  height: 22px;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAWCAMAAAAo0TYrAAAAElBMVEX///8AAAAAAAAAAAAAAAAAAABknMCaAAAABXRSTlMAEHCg0O5XV0MAAAAzSURBVHgBYwACJkYGZMDMysKIwmUFCyC4KAIsrKgCjPQQQPCpzUX4B9O/mOGBGV7o4QkA5zcCv3HiEZgAAAAASUVORK5CYII=');
+.fc-unthemed td.fc-today{
+  background-color: rgba(81, 146, 181, .2);
 }
 
-.icon-chevron-rotate {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+.containerCal{
+  font-family: 'Varela Round', serif;
 }
-
-.page {
-  width: 500px;
-  margin: 0 auto;
-  padding: 1em;
-}
-
-.responsive-calendar-modal {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-  padding: 1em;
-}
-
-.controls{
-  background-color: #80D8FF;
-  height: 70px;
-  padding-top: 15px;
-  border-radius: 5px;
-}
-
-.responsive-calendar .controls {
-  text-align: center;
-}
-
-.responsive-calendar .controls a {
-  cursor: pointer;
-}
-
-.responsive-calendar .controls h4 {
-  display: inline;
-}
-
-.responsive-calendar .day-headers,
-.responsive-calendar .days {
-  font-size: 0;
-}
-
-.responsive-calendar .day {
-  display: inline-block;
-  position: relative;
-  font-size: 14px;
-  width: 14.285714285714286%;
-  text-align: center;
-}
-
-.responsive-calendar .day a {
-  color: #000000;
-  display: block;
-  cursor: pointer;
-  padding: 20% 0 20% 0;
-}
-
-.responsive-calendar .day a:hover {
-  background-color: #eee;
-  text-decoration: none;
-}
-
-.responsive-calendar .day.header {
-  border-bottom: 1px rgb(74, 74, 74) solid;
-}
-
-.responsive-calendar .day.active a {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day.active a:hover {
-  background-color: #80D8FF;
-}
-
-.responsive-calendar .day.active .not-current {
-  background-color: #40C4FF;
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day.active .not-current:hover {
-  background-color: #80D8FF;
-}
-
-.responsive-calendar .day.not-current a {
-  color: rgb(74, 74, 74);
-}
-
-.responsive-calendar .day .badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  z-index: 1;
-}
-
-hr{
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 
 /*drop down menu*/
 .glyphicon{
@@ -518,6 +419,7 @@ i:hover{
 
 /*CARDS FOR FEED*/
 .card {
+    background-color: rgb(241, 241, 241);
     font-size: 1em;
     padding: 0;
     border: none;

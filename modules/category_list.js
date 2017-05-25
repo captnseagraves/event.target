@@ -85,6 +85,7 @@ class CategoryList extends React.Component {
             />
         )
      })
+
     return (
       <div>
       <nav className="navbar">
@@ -109,7 +110,6 @@ class CategoryList extends React.Component {
       </div>
        )
   }
-
- }
+}
 
 export default CategoryList
