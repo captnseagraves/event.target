@@ -25648,7 +25648,7 @@
 	        _react2.default.createElement(
 	          'nav',
 	          { className: 'navbar' },
-	          _react2.default.createElement(_reactRouterDom.Link, { to: '/profile', title: 'Calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	          _react2.default.createElement(_reactRouterDom.Link, { to: '/userprofile', title: 'User Profile', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'dropdown' },
