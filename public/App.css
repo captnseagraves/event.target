@@ -169,7 +169,7 @@ body {
 }
 
 .catSlogan{
-  font-size: 4.5vmin;
+  font-size: 3.5vmin;
   margin-top: 5px;
 }
 
@@ -589,10 +589,7 @@ i:hover{
 /*USER PRO*/
 
 .userproCon{
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: 40%;
 }
 
 /*MEDIA QUERYS*/
