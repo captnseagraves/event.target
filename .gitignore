@@ -35,3 +35,4 @@ npm-debug.log
 ./public/bundle.js
 ./public/DFbundle.js
 .DS_Store
+bundle.js
