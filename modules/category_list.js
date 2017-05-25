@@ -87,7 +87,9 @@ class CategoryList extends React.Component {
      })
     return (
       <div>
-          <div className="bgCat"></div>
+        <div className="bgCat"></div>
+        <a href="/" title="Home Page" className="fa fa-arrow-circle-left fa-5x navCatLeft" aria-hidden="true"></a>
+          <a href="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></a>
           <h1 className="animated flipInY pageheader">Event Categories</h1>
           <p className="animated bounceInLeft catSlogan">click on any event categories to populate your custom calendar</p>
          <div className="categoryItems animated bounceInLeft">

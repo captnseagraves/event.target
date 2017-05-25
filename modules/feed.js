@@ -29,11 +29,11 @@ constructor(props) {
         return (
            <div>
            <div id="container">
+           <a href="/category_list" title="Event Cateories" className="fa fa-arrow-circle-left fa-5x navCatLeft" aria-hidden="true"></a>
+           <a href="/calendar" title="calendar" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></a>
            <h1 className="pageheader">Event Feed</h1>
            </div>
-           <FeedList
-             events={this.state.events}
-           />
+           <FeedList events={this.state.events} />
            </div>
         )
      } else {
