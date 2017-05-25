@@ -9,8 +9,9 @@ console.log(this.props.event);
     <div className="card">
         <img className="card-img-top" src={this.props.event.cover_picture}></img><br></br>
         <div className="card-block">
+        <p>click the calendar to add event</p>
             <figure className="profile">
-                <img className="profile-avatar" alt="" src={this.props.event.cover_picture}></img>
+            <i className="fa fa-calendar fa-lg" aria-hidden="true"></i><br></br>
             </figure>
             <h1 className="card-title mt-3">{this.props.event.name}</h1>
             <p>{this.props.event.category}</p>

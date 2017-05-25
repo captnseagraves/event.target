@@ -26168,9 +26168,15 @@
 	                        "div",
 	                        { className: "card-block" },
 	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "click the calendar to add event"
+	                        ),
+	                        _react2.default.createElement(
 	                            "figure",
 	                            { className: "profile" },
-	                            _react2.default.createElement("img", { className: "profile-avatar", alt: "", src: this.props.event.cover_picture })
+	                            _react2.default.createElement("i", { className: "fa fa-calendar fa-lg", "aria-hidden": "true" }),
+	                            _react2.default.createElement("br", null)
 	                        ),
 	                        _react2.default.createElement(
 	                            "h1",

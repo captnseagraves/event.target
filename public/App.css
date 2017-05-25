@@ -55,7 +55,7 @@ body {
     padding-top: .7em;
     padding-bottom: .7em;
     color: rgb(74, 74, 74);
-    transition: all .5s ease-in;
+    transition: all .5s ease-in;e
     font-size: 2.5vmin;
     color: #eeebeb;
     text-transform: uppercase;
@@ -442,7 +442,6 @@ hr{
 }
 
 
-
 /*drop down menu*/
 .glyphicon{
   font-size: 50px;
@@ -471,6 +470,12 @@ hr{
 
 i{
   margin: 5px 5px;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+
+i:hover{
+  color: #40C4FF;
 }
 
 /*CARD FOR ABOUT US*/
@@ -490,14 +495,13 @@ i{
 /*CARDS FOR FEED*/
 .card {
     font-size: 1em;
-    overflow: hidden;
     padding: 0;
     border: none;
     border-radius: .28571429rem;
     box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-    height: 400px;
     overflow: scroll;
-    margin: 5px 5px 5px 5px;
+    height: 500px;
+    margin: 10px 10px;
 }
 
 .card-block {
@@ -513,7 +517,7 @@ i{
 .card-img-top {
     display: block;
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 .card-title {
@@ -526,6 +530,7 @@ i{
     clear: both;
     margin-top: .5em;
     color: rgba(0, 0, 0, .68);
+    overflow: scroll;
 }
 
 .card-footer {
@@ -548,12 +553,12 @@ i{
     position: absolute;
     top: -12px;
     display: inline-block;
-    overflow: hidden;
+    overflow: scroll;
     box-sizing: border-box;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin: 0;
-    border: 1px solid #fff;
+    /*border: 1px solid #fff;*/
     border-radius: 50%;
 }
 
@@ -575,13 +580,6 @@ i{
     margin-left: 4px;
     vertical-align: top;
 }
-
-
-
-
-
-
-
 
 /*MEDIA QUERYS*/
 
