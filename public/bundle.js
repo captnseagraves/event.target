@@ -25571,6 +25571,7 @@
 	    _classCallCheck(this, Calendar);
 
 	    var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
+<<<<<<< HEAD
 
 	    _this.state = {
 	      events: [{
@@ -25704,6 +25705,87 @@
 	    }
 	  }]);
 
+=======
+
+	    _this.state = {
+	      events: []
+	    };
+
+	    return _this;
+	  }
+
+	  _createClass(Calendar, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var _this2 = this;
+
+	      fetch('/api/user_event', {
+	        credentials: 'include'
+	      }).then(function (res) {
+	        return res.json();
+	      }).then(function (events) {
+	        var _$$fullCalendar;
+
+	        console.log(events[2]);
+	        _this2.setState({
+	          events: events
+	        });
+	        console.log('this is maybe the state', _this2.state.events);
+
+	        console.log('test');
+	        $('#calendar').fullCalendar((_$$fullCalendar = {
+	          header: {
+	            left: 'prev,next',
+	            center: 'title',
+	            right: 'month,agendaWeek'
+	          },
+	          defaultView: 'month',
+	          views: {
+	            listDay: { buttonText: 'list day' },
+	            listWeek: { buttonText: 'list week' }
+	          },
+	          editable: true,
+	          navLinks: true,
+	          events: _this2.state.events
+	        }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
+	          //modal perhaps with desciption and location
+	          alert('Event: ' + calEvent.title);
+	          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	          // change the border color just for fun
+	          $(this).css('border-color', 'red');
+	        }), _$$fullCalendar));
+
+	        console.log("give me a little", _this2.state.events);
+	        $('#listCal').fullCalendar(_defineProperty({
+	          header: false,
+	          defaultView: 'listMonth',
+	          editable: true,
+	          navLinks: true,
+	          events: _this2.state.events
+	        }, 'editable', true));
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement('div', { id: 'calendar' }),
+	        _react2.default.createElement('hr', null),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'listCal' },
+	          ' '
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {}
+	  }]);
+
+>>>>>>> bingo
 	  return Calendar;
 	}(_react2.default.Component);
 
@@ -26294,7 +26376,7 @@
 /* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26323,6 +26405,7 @@
 	    return _possibleConstructorReturn(this, (EventCard.__proto__ || Object.getPrototypeOf(EventCard)).apply(this, arguments));
 	  }
 
+<<<<<<< HEAD
 	  _createClass(EventCard, [{
 	    key: "render",
 	    value: function render() {
@@ -26389,6 +26472,90 @@
 	      );
 	    }
 	  }]);
+=======
+	    _createClass(EventCard, [{
+	        key: 'clickHandler',
+	        value: function clickHandler(event) {
+	            console.log('were here', event.target.getAttribute('data'));
+	            fetch('/api/user_event', {
+	                method: "POST",
+	                body: JSON.stringify({ event_id: event.target.getAttribute('data') }),
+	                credentials: 'include',
+	                headers: {
+	                    'Accept': 'application/json',
+	                    'Content-Type': 'application/json'
+	                }
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+
+	            console.log('IN EVENTCARD');
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'col-sm-6 col-md-4 col-lg-3 mt-4' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'card' },
+	                    _react2.default.createElement('img', { className: 'card-img-top', src: this.props.event.event_cover_picture }),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'card-block' },
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            'click the calendar to add event'
+	                        ),
+	                        _react2.default.createElement(
+	                            'figure',
+	                            { className: 'profile' },
+	                            _react2.default.createElement('i', { onClick: this.clickHandler.bind(this), data: this.props.event.event_id, className: 'fa fa-calendar fa-lg', 'aria-hidden': 'true' }),
+	                            _react2.default.createElement('br', null)
+	                        ),
+	                        _react2.default.createElement(
+	                            'h1',
+	                            { className: 'card-title mt-3' },
+	                            this.props.event.name
+	                        ),
+	                        _react2.default.createElement(
+	                            'p',
+	                            null,
+	                            this.props.event.category
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'card-text' },
+	                            _react2.default.createElement(
+	                                'p',
+	                                null,
+	                                this.props.event.description
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'card-footer' },
+	                        _react2.default.createElement(
+	                            'small',
+	                            null,
+	                            this.props.event.start_time,
+	                            ' | ',
+	                            this.props.event.end_time
+	                        ),
+	                        _react2.default.createElement('br', null),
+	                        _react2.default.createElement(
+	                            'small',
+	                            null,
+	                            '*Go to calendar to see events*'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+>>>>>>> bingo
 
 	  return EventCard;
 	}(_react2.default.Component);
