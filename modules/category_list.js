@@ -88,16 +88,16 @@ class CategoryList extends React.Component {
     return (
       <div>
       <nav className="navbar">
-        <a href="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></a>
+        <Link to="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
         <div className="dropdown">
           <div className="bgCat"></div>
             <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
             <ul className="dropdown-menu">
-              <li><a href="/home">Home</a></li>
-              <li><a href="/feed">Feed</a></li>
-              <li><a href="/calendar">Calendar</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="#">Log Out</a></li>
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to="/feed">Feed</Link></li>
+              <li><Link to="/calendar">Calendar</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="#">Log Out</Link></li>
             </ul>
           </div>
         </nav>
