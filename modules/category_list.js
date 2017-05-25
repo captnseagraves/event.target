@@ -94,7 +94,7 @@ class CategoryList extends React.Component {
           <div className="bgCat"></div>
             <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
             <ul className="dropdown-menu">
-              <li><Link to="/home">Home</Link></li>
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/feed">Feed</Link></li>
               <li><Link to="/calendar">Calendar</Link></li>
               <li><Link to="/about">About</Link></li>
