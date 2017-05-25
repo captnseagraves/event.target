@@ -23,7 +23,7 @@ renderRedirect(){
       )
     } else {
       return(
-        <Redirect to='/feed'></Redirect>
+        <Redirect to='/category_list'></Redirect>
       )
     }
   }

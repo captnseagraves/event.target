@@ -80,7 +80,6 @@ body {
     letter-spacing: 5px;
 }
 
-
 /*LOGO*/
 
 .logoScale {
@@ -468,6 +467,7 @@ hr{
   width: 400px;
 }
 
+
 i{
   margin: 5px 5px;
   cursor: pointer;
@@ -478,7 +478,31 @@ i:hover{
   color: #40C4FF;
 }
 
+
+.navCatRight, .navCatLeft{
+  position: relative;
+  color: #80D8FF;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 1s ease;
+}
+
+.navCatRight{
+  float: right;
+}
+
+.navCatLeft, .glyphicon-align-justify{
+  float: left;
+  color: #80D8FF;
+}
+
+.navCatRight:hover, .navCatLeft:hover{
+  text-decoration: none;
+  color: #40C4FF;
+}
+
 /*CARD FOR ABOUT US*/
+
 .top-img img{
   border-radius: 5px;
   width: 100%;

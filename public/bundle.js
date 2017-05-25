@@ -21985,7 +21985,7 @@
 	        if (this.state.isFirstTime) {
 	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/category_list' });
 	        } else {
-	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/feed' });
+	          return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/category_list' });
 	        }
 	      }
 	    }
@@ -25750,7 +25750,66 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('div', { className: 'bgCat' }),
+	        _react2.default.createElement(
+	          'nav',
+	          { className: 'navbar' },
+	          _react2.default.createElement('a', { href: '/feed', title: 'Feed Page', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'dropdown' },
+	            _react2.default.createElement('div', { className: 'bgCat' }),
+	            _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	            _react2.default.createElement(
+	              'ul',
+	              { className: 'dropdown-menu' },
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/home' },
+	                  'Home'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/feed' },
+	                  'Feed'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/calendar' },
+	                  'Calendar'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '/about' },
+	                  'About'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  'Log Out'
+	                )
+	              )
+	            )
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'h1',
 	          { className: 'animated flipInY pageheader' },
@@ -25946,14 +26005,72 @@
 	            'div',
 	            { id: 'container' },
 	            _react2.default.createElement(
+	              'nav',
+	              { className: 'navbar' },
+	              _react2.default.createElement('a', { href: '/calendar', title: 'Calendar', className: 'fa fa-arrow-circle-right fa-5x navCatRight', 'aria-hidden': 'true' }),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'dropdown' },
+	                _react2.default.createElement('div', { className: 'bgCat' }),
+	                _react2.default.createElement('i', { className: 'glyphicon glyphicon-align-justify dropdown-toggle', type: '', 'data-toggle': 'dropdown' }),
+	                _react2.default.createElement(
+	                  'ul',
+	                  { className: 'dropdown-menu' },
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/home' },
+	                      'Home'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/category_list' },
+	                      'Cateories'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/calendar' },
+	                      'Calendar'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '/about' },
+	                      'About'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                      'a',
+	                      { href: '#' },
+	                      'Log Out'
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
 	              'h1',
 	              { className: 'pageheader' },
 	              'Event Feed'
 	            )
 	          ),
-	          _react2.default.createElement(_feed_list2.default, {
-	            events: this.state.events
-	          })
+	          _react2.default.createElement(_feed_list2.default, { events: this.state.events })
 	        );
 	      } else {
 	        return null;
