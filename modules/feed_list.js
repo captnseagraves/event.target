@@ -1,7 +1,5 @@
 import React from 'react'
 import Events from './events'
-import { CookiesProvider, withCookies, Cookies } from 'react-cookie'
-
 class FeedList extends React.Component {
 constructor(props) {
   super(props)
