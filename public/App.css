@@ -975,3 +975,6 @@ i:hover{
 td.fc-list-item-time, span.fc-time {
    display:none;
 }
+.scrollYouDont {
+   overflow: visible;  
+}
