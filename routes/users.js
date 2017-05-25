@@ -5,16 +5,6 @@ var EventSearch = require("facebook-events-by-location-core");
 
 /* GET users listing. */
 
-router.post('/', checkUser, function(req, res, next) {
-    postUser(req.body)
-        .then(insertedUser => {
-          res.cookie(insertedUser.id, { httpOnly: false })
-
-            console.log(insertedUser);
-            insertedUser.firstTime = true
-            res.json(insertedUser)
-        })
-});
 
 router.get('/', function(req, res, next) {
 
@@ -155,14 +145,30 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/', checkUser, function(req, res, next) {
+  console.log('GOT TO CREATe');
+    postUser(req.body)
+        .then(insertedUser => {
+          // res.cookie(insertedUser.id, { httpOnly: false })
+
+            insertedUser[0].firstTime = true
+            console.log(insertedUser[0]);
+            res.json(insertedUser[0])
+        })
+});
+
 function checkUser(req, res, next) {
+  console.log('GOT TO CHECKUSER');
+  console.log(req.body);
     getUser(req.body.user_id)
         .then(user => {
             if (user) {
-              res.cookie(user.id, { httpOnly: false })
+              console.log('USER EXISTS');
+              // res.cookie(user.id, { httpOnly: false })
                 user.firstTime = false
                 res.json(user)
             } else {
+              console.log('USER DOESNT EXIST');
                 next()
             }
         })

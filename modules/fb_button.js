@@ -52,7 +52,6 @@ renderRedirect(){
   }
 
   responseFacebook(response) {
-    console.log("THIS IS THE FUCKING RESPONSE")
     console.log(response);
 
     let body = {
@@ -74,7 +73,7 @@ renderRedirect(){
     .then(user => {
       console.log("I AME HERE");
       console.log(user);
-      document.cookie = `userId = ${user.id}`
+      document.cookie = `userId= ${user.id}`
       if (user.firstTime) {
         this.setState({
           isSignedIn: true,

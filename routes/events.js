@@ -6,7 +6,7 @@ const knex = require('../db/knex');
 router.get('/', function(req, res, next) {
   getEvents()
     .then(events => {
-      console.log(events);
+      // console.log(events);
       res.json(events)
     })
 });
