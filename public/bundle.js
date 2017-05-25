@@ -25838,7 +25838,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '/home' },
+	                  { to: '/' },
 	                  'Home'
 	                )
 	              ),
@@ -26093,7 +26093,7 @@
 	                    null,
 	                    _react2.default.createElement(
 	                      _reactRouterDom.Link,
-	                      { to: '/home' },
+	                      { to: '/' },
 	                      'Home'
 	                    )
 	                  ),
@@ -27251,7 +27251,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
-	                  { to: '/home' },
+	                  { to: '/' },
 	                  'Home'
 	                )
 	              ),
@@ -27326,6 +27326,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
+	                'My cateories: ',
 	                this.state.user_category
 	              )
 	            )

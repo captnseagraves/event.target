@@ -36,7 +36,7 @@ componentWillMount(){
       <div className="dropdown">
           <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
           <ul className="dropdown-menu">
-            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/category_list">Cateories</Link></li>
             <li><Link to="/feed">Feed</Link></li>
             <li><Link to="/calendar">Calendar</Link></li>
@@ -52,7 +52,7 @@ componentWillMount(){
                    <img className="tom top-img" src="http://i.imgur.com/OkHubaP.png"></img>
                </div>
                 <h1>{this.state.user.name}</h1><br></br>
-                <p>{this.state.user_category}</p>
+                <p>My cateories: {this.state.user_category}</p>
                 </div>
             </div>
         </div>
