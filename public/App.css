@@ -955,3 +955,23 @@ i:hover{
       /*font-weight: bold;*/
   }
 }
+
+
+#modalBody {
+   word-wrap: break-word;
+   text-align: left;
+   line-height: 22px;
+}
+
+#picaroo {
+   width: 80%;
+}
+
+.lefty {
+   word-wrap: break-word;
+   text-align: left;
+}
+
+td.fc-list-item-time, span.fc-time {
+   display:none;
+}

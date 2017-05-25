@@ -41,11 +41,18 @@ class Calendar extends React.Component  {
         events: this.state.events,
         editable: true,
         eventClick: function(calEvent, jsEvent, view) {
+           $('#modalTitle').html(calEvent.title);
+           $('#modalBody').html(calEvent.description);
+           $('#picaroo').attr('src',calEvent.event_cover_picture);
+           $('#whereWolf').html(`Venue: ${calEvent.venue_name}`);
+           $('#addy').html(`Address: ${calEvent.street} \n ${calEvent.city}  ${calEvent.state}  ${calEvent.zip}`);
+           $('#fullCalModal').modal();
+
            //modal perhaps with desciption and location
-         alert('Event: ' + calEvent.title);
-         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-         // change the border color just for fun
-         $(this).css('border-color', 'red');
+         // alert('Event: ' + calEvent.title);
+         // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+         // // change the border color just for fun
+         // $(this).css('border-color', 'red');
 
 }
    })
@@ -64,10 +71,9 @@ class Calendar extends React.Component  {
  }
 
 
-
    render(){
      return (
-       <div className="container-fluid containerCal">
+       <div className="container-fluid containerCal" id="conCal">
        <nav className="navbar">
          <div className="dropdown">
              <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
@@ -81,6 +87,25 @@ class Calendar extends React.Component  {
            </div>
          </nav>
         <div id="calendar"></div>
+       <div id="fullCalModal" className="modal fade">
+          <div className="modal-dialog">
+              <div className="modal-content">
+                  <div className="modal-header">
+                      <button type="button" className="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span className="sr-only">close</span></button>
+                      <h1 id="modalTitle" className="modal-title"></h1>
+                  </div>
+                  <img id="picaroo"></img>
+                  <div className="container">
+                     <br></br>
+                     <div id="whereWolf" className="lefty"></div><br></br>
+                     <div id="addy" className="lefty"></div>
+                  </div>
+                  <div id="modalBody" className="modal-body"></div>
+                  <div className="modal-footer">
+                  </div>
+              </div>
+    </div>
+</div>
         <hr></hr>
         <div id="listCal"> </div>
        </div>

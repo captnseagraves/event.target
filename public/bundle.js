@@ -25622,11 +25622,18 @@
 	          navLinks: true,
 	          events: _this2.state.events
 	        }, _defineProperty(_$$fullCalendar, 'editable', true), _defineProperty(_$$fullCalendar, 'eventClick', function eventClick(calEvent, jsEvent, view) {
+	          $('#modalTitle').html(calEvent.title);
+	          $('#modalBody').html(calEvent.description);
+	          $('#picaroo').attr('src', calEvent.event_cover_picture);
+	          $('#whereWolf').html('Venue: ' + calEvent.venue_name);
+	          $('#addy').html('Address: ' + calEvent.street + ' \n ' + calEvent.city + '  ' + calEvent.state + '  ' + calEvent.zip);
+	          $('#fullCalModal').modal();
+
 	          //modal perhaps with desciption and location
-	          alert('Event: ' + calEvent.title);
-	          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	          // change the border color just for fun
-	          $(this).css('border-color', 'red');
+	          // alert('Event: ' + calEvent.title);
+	          // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	          // // change the border color just for fun
+	          // $(this).css('border-color', 'red');
 	        }), _$$fullCalendar));
 
 	        console.log("give me a little", _this2.state.events);
@@ -25644,7 +25651,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container-fluid containerCal' },
+	        { className: 'container-fluid containerCal', id: 'conCal' },
 	        _react2.default.createElement(
 	          'nav',
 	          { className: 'navbar' },
@@ -25704,6 +25711,49 @@
 	          )
 	        ),
 	        _react2.default.createElement('div', { id: 'calendar' }),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'fullCalModal', className: 'modal fade' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'modal-dialog' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'modal-content' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'modal-header' },
+	                _react2.default.createElement(
+	                  'button',
+	                  { type: 'button', className: 'close', 'data-dismiss': 'modal' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { 'aria-hidden': 'true' },
+	                    '\xD7'
+	                  ),
+	                  ' ',
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'sr-only' },
+	                    'close'
+	                  )
+	                ),
+	                _react2.default.createElement('h1', { id: 'modalTitle', className: 'modal-title' })
+	              ),
+	              _react2.default.createElement('img', { id: 'picaroo' }),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'container' },
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement('div', { id: 'whereWolf', className: 'lefty' }),
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement('div', { id: 'addy', className: 'lefty' })
+	              ),
+	              _react2.default.createElement('div', { id: 'modalBody', className: 'modal-body' }),
+	              _react2.default.createElement('div', { className: 'modal-footer' })
+	            )
+	          )
+	        ),
 	        _react2.default.createElement('hr', null),
 	        _react2.default.createElement(
 	          'div',
@@ -26195,6 +26245,7 @@
 	      events: _this.props.events,
 	      categories: []
 	    };
+
 	    return _this;
 	  }
 
@@ -26210,9 +26261,9 @@
 	        _this2.setState({
 	          categories: categories
 	        });
-	        console.log('categories in feed list', _this2.state.categories);
 	        var filterArr = [];
 	        for (var i = 0; i < _this2.props.events.length; i++) {
+	          console.log('test');
 	          var event = _this2.props.events[i];
 	          if (_this2.state.categories.includes(event.category)) {
 	            filterArr.push(event);
@@ -26226,7 +26277,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      // console.log("feedlist", this.state.events);
 	      return _react2.default.createElement(
 	        'div',
 	        null,
