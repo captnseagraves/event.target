@@ -58,10 +58,10 @@ class Calendar extends React.Component  {
          editable: true,
          eventClick: function(calEvent, jsEvent, view) {
             //modal perhaps with desciption and location
-          alert('Event: ' + calEvent.title);
-          alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-          // change the border color just for fun
-          $(this).css('border-color', 'red');
+             alert('Event: ' + calEvent.title);
+             alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+             // change the border color just for fun
+             $(this).css('border-color', 'red');
 
 }
     })
