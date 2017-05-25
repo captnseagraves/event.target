@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
 // let events = [{}]
 
 class Calendar extends React.Component  {
@@ -27,19 +29,31 @@ class Calendar extends React.Component  {
           }
         ]
      }
-
  }
-
 
    render(){
      return (
-       <div className="container">
+       <div className="container-fluid containerCal">
+       <nav className="navbar">
+         <Link to="/profile" title="Calendar" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
+         <div className="dropdown">
+             <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
+             <ul className="dropdown-menu">
+               <li><Link to="/home">Home</Link></li>
+               <li><Link to="/feed">Calendar</Link></li>
+               <li><Link to="/category_list">Cateories</Link></li>
+               <li><Link to="/about">About</Link></li>
+               <li><Link to="#">Log Out</Link></li>
+             </ul>
+           </div>
+         </nav>
         <div id="calendar"></div>
         <hr></hr>
         <div id="listCal"> </div>
        </div>
      )
    }
+
    componentDidMount() {
     $('#calendar').fullCalendar({
          header: {
@@ -65,6 +79,7 @@ class Calendar extends React.Component  {
 
 }
     })
+
     $('#listCal').fullCalendar({
          header: false,
          defaultView: 'listMonth',
@@ -73,10 +88,7 @@ class Calendar extends React.Component  {
          events: this.state.events,
          editable: true,
     })
-
    }
-
 }
-
 
 export default Calendar;
