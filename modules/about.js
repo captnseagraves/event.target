@@ -60,10 +60,10 @@ class About extends React.Component {
                      <img className="kevin top-img" src="http://i.imgur.com/EtaVBj7.jpg"></img>
                  </div>
                   <h1>Kevin Seagraves</h1><br></br>
-                  <p>Full-Stack Developer. Curator of code, user experience, and customer satisfaction. Agile, TDD Developer. Languages: HTML5, CSS3, JavaScript, jQuery, Bootstrap, Materialize, Node.js, SQL, PostgreSQL, Angular.js, Ruby on Rails</p><br></br>
-                  <Link to="" target="_blank"><i className="fa fa-github fa-2x" aria-hidden="true"></i></Link>
-                  <Link to="" target="_blank"><i className="fa fa-linkedin fa-2x" aria-hidden="true"></i></Link>
-                  <Link to="" target="_blank"><i className="fa fa-link fa-2x" aria-hidden="true"></i></Link>
+                  <p>A curator of code, user experience, and customer satisfaction, Kevin believes in beautiful code and elegant solutions to great challenges. He wants to use his skills in computer programming to better the world and live a happy, healthy life. </p><br></br>
+                  <Link to="https://www.linkedin.com/in/kevinseagraves/" target="_blank"><i className="fa fa-github fa-2x" aria-hidden="true"></i></Link>
+                  <Link to="https://github.com/captnseagraves" target="_blank"><i className="fa fa-linkedin fa-2x" aria-hidden="true"></i></Link>
+                  <Link to="https://talent.galvanize.com/students/1396" target="_blank"><i className="fa fa-link fa-2x" aria-hidden="true"></i></Link>
              </div>
          </div>
         </div>
