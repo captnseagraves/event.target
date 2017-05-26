@@ -3,7 +3,7 @@ Event Target
 
 Event Target aggregates all of your local events into one place, allows you to sort by category, and add single events to your calendar or subscribe to venues that often hold events that you like.
 
-Check out a walkthrough of our app here: "Youtube Link Here"
+Check out a walkthrough of our app here: https://www.youtube.com/watch?v=Wuy2jok7z5w&feature=youtu.be
 
 Our current deployed version is here: http://eventtarget.herokuapp.com
 
