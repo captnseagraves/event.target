@@ -25940,7 +25940,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          { className: 'animated bounceInLeft catSlogan' },
-	          'click on any event categories to populate your custom calendar'
+	          'click on any event categories to populate your event feed'
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -26191,6 +26191,11 @@
 	              'h1',
 	              { className: 'pageheader' },
 	              'Event Feed'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              { className: 'animated bounceInLeft catSlogan' },
+	              'click to add to your calander or to subscribe to a venue'
 	            )
 	          ),
 	          _react2.default.createElement(_feed_list2.default, { events: this.state.events })

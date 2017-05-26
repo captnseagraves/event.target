@@ -77,9 +77,8 @@ class Calendar extends React.Component  {
    render(){
      return (
        <div className="container-fluid containerCal">
-       <nav className="navbar">
-         <Link to="/userprofile" title="User Profile" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
-         <div className="dropdown">
+         <nav className="navbar">
+           <div className="dropdown">
              <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
              <ul className="dropdown-menu">
                <li><Link to="/">Home</Link></li>

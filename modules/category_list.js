@@ -88,9 +88,9 @@ class CategoryList extends React.Component {
 
     return (
       <div>
-      <nav className="navbar">
-        <Link to="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
-        <div className="dropdown">
+        <nav className="navbar">
+          <Link to="/feed" title="Feed Page" className="fa fa-arrow-circle-right fa-5x navCatRight" aria-hidden="true"></Link>
+          <div className="dropdown">
             <i className="glyphicon glyphicon-align-justify dropdown-toggle" type="" data-toggle="dropdown"></i>
             <ul className="dropdown-menu">
               <li><Link to="/">Home</Link></li>
@@ -101,8 +101,8 @@ class CategoryList extends React.Component {
             </ul>
           </div>
         </nav>
-          <h1 className="animated flipInY pageheader">Event Categories</h1>
-          <p className="animated bounceInLeft catSlogan">click on any event categories to populate your custom calendar</p>
+        <h1 className="animated flipInY pageheader">Event Categories</h1>
+        <p className="animated bounceInLeft catSlogan">click on any event categories to populate your event feed</p>
          <div className="categoryItems animated bounceInLeft">
             { CategoryItems }
         </div>
