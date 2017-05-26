@@ -15,7 +15,9 @@ constructor(props) {
 
 
   componentWillMount() {
-      fetch(`/api/events`)
+      fetch(`/api/events/binbin`, {
+        credentials:'include'
+      })
       .then(res => res.json())
       .then(events => {
          console.log('here');

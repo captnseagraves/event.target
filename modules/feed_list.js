@@ -13,28 +13,21 @@ constructor(props) {
 
 
 
-componentDidMount() {
-let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
-  fetch(`/api/user_category/${userId}`)
-  .then(res => res.json())
-  .then(categories => {
-    this.setState({
-      categories
-    })
-    let filterArr = []
-    for (var i = 0; i < this.props.events.length; i++) {
-      console.log('test');
-      let event = this.props.events[i]
-      if (this.state.categories.includes(event.category)) {
-        filterArr.push(event)
-      }
-    }
-    this.setState({
-      events:filterArr
-    })
-
-  })
-}
+// componentDidMount() {
+// let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
+//   fetch(`/api/user_category/${userId}`)
+//   .then(res => res.json())
+//   .then(categories => {
+//     this.setState({
+//       categories
+//     })
+//
+//     this.setState({
+//       events:filterArr
+//     })
+//
+//   })
+// }
 
 
   render() {
