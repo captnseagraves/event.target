@@ -48,6 +48,10 @@ table {
 	border-spacing: 0;
 }
 
+html{
+	height: 100%;
+}
+
 html, body {
   background-image: url('images/crossword.png');
 }
@@ -108,13 +112,13 @@ body {
     text-align: center;
     padding-top: .7em;
     padding-bottom: .7em;
+		background-color: #3281a4;
     color: rgb(74, 74, 74);
-    transition: all .5s ease-in;e
+    transition: all .5s ease-in;
     font-size: 2.5vmin;
     color: #eeebeb;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    background-color: #3281a4;
+    /*letter-spacing: 5px;*/
     height: 50px;
 }
 
@@ -169,7 +173,7 @@ body {
 }
 
 .catSlogan{
-  font-size: 4.5vmin;
+  font-size: 3.5vmin;
   margin-top: 5px;
 }
 
@@ -509,6 +513,24 @@ i:hover{
     margin: 10px 10px;
 }
 
+.card button{
+	font-weight: bold;
+	height: 30px;
+	width: 140px;
+	margin-bottom: 30px;
+	margin-top: -10px;
+	margin: 0px 5px 15px 5px;
+	background-color: rgba(255, 255, 255, 0);
+	color: #40C4FF;
+	border: none;
+	transition: all 1s ease;
+}
+
+.card button:hover{
+	background-color: #40C4FF;
+	color: #fff;
+}
+
 .card-block {
     font-size: 1em;
     position: relative;
@@ -589,10 +611,7 @@ i:hover{
 /*USER PRO*/
 
 .userproCon{
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	width: 40%;
 }
 
 /*MEDIA QUERYS*/
@@ -619,9 +638,10 @@ i:hover{
     .divvy {
         margin-top: 10px;
         width: 25%;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+				line-height: 40px;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
@@ -631,8 +651,8 @@ i:hover{
       line-height: 40px;
       text-align: center;
       font-size: 2vmin;
-      letter-spacing: 2.2px;
-      font-weight: bold;
+      /*letter-spacing: 2.2px;*/
+      /*font-weight: bold;*/
     }
     .col-xs-6 {
       width: 100%
@@ -640,6 +660,9 @@ i:hover{
     .col-xs-6 {
       width: 100%
     }
+		.fa-arrow-circle, .glyphicon{
+			font-size: 55px;
+		}
 }
 
 
@@ -664,24 +687,29 @@ i:hover{
     .divvy {
         margin-top: 10px;
         width: 25%;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2vmin;
+				line-height: 40px;
+
     }
     .catToggle{
       line-height: 40px;
       text-align: center;
       font-size: 2vmin;
-      letter-spacing: 2.2px;
-      font-weight: bold;
+      /*letter-spacing: 2.2px;*/
+      /*font-weight: bold;*/
     }
     .col-xs-6 {
       width: 100%
     }
+		.fa-arrow-circle, .glyphicon{
+			font-size: 55px;
+		}
 
 }
 
@@ -710,24 +738,29 @@ i:hover{
     .divvy {
         margin-top: 10px;
         width: 25%;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2vmin;
+				line-height: 40px;
+
     }
     .catToggle{
       line-height: 40px;
       text-align: center;
-      font-size: 1.7vmin;
-      letter-spacing: .5px;
-      font-weight: bold;
+      font-size: 2vmin;
+      /*letter-spacing: .5px;*/
+      /*font-weight: bold;*/
     }
     .col-xs-6 {
       width: 100%
     }
+		.fa-arrow-circle, .glyphicon{
+			font-size: 55px;
+		}
 
 }
 
@@ -759,24 +792,28 @@ i:hover{
     .divvy {
         margin-top: 10px;
         width: 25%;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
-        font-size: 1.8vmin;
+				line-height: 40px;
+        font-size: 2vmin;
     }
     .catToggle{
       line-height: 40px;
       text-align: center;
       font-size: 2vmin;
-      letter-spacing: 1px;
-      font-weight: bold;
+      /*letter-spacing: 1px;*/
+      /*font-weight: bold;*/
     }
     .col-xs-6 {
       width: 100%
     }
+	.fa-arrow-circle{
+		font-size: 55px;
+	}
 
 }
 
@@ -803,21 +840,23 @@ i:hover{
         margin-top: 10px;
         width: 25%;
         height: 50px;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2.8vmin;
         height: 50px;
+				line-height: 40px;
+
       }
       .catToggle{
         line-height: 40px;
         text-align: center;
-        font-size: 2vmin;
-        letter-spacing: 2.2px;
-        font-weight: bold;
+        font-size: 2.8vmin;
+        /*letter-spacing: 2.2px;*/
+        /*font-weight: bold;*/
     }
     .col-xs-6 {
       width: 100%
@@ -850,21 +889,23 @@ i:hover{
         margin-top: 10px;
         width: 25%;
         height: 50px;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2.8vmin;
         height: 50px;
+				line-height: 40px;
+
       }
     .catToggle{
       line-height: 40px;
       text-align: center;
-      font-size: 2vmin;
-      letter-spacing: 2.2px;
-      font-weight: bold;
+      font-size: 2.8vmin;
+      /*letter-spacing: 2.2px;*/
+      /*font-weight: bold;*/
   }
 }
 
@@ -894,21 +935,46 @@ i:hover{
         margin-top: 10px;
         width: 25%;
         height: 50px;
-        margin: 1.1em;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        /*margin: 1.1em;*/
+        /*padding-top: 2em;*/
+        /*padding-bottom: 2em;*/
         background-color: #80D8FF;
         color: rgb(74, 74, 74);
         transition: all .5s ease-in;
         font-size: 2.8vmin;
         height: 50px;
+				line-height: 40px;
+
       }
 
     .catToggle{
       line-height: 20px;
       text-align: center;
-      font-size: 2vmin;
-      letter-spacing: 2.2px;
-      font-weight: bold;
+      font-size: 2.8vmin;
+      /*letter-spacing: 2.2px;*/
+      /*font-weight: bold;*/
   }
+}
+
+
+#modalBody {
+   word-wrap: break-word;
+   text-align: left;
+   line-height: 22px;
+}
+
+#picaroo {
+   width: 80%;
+}
+
+.lefty {
+   word-wrap: break-word;
+   text-align: left;
+}
+
+td.fc-list-item-time, span.fc-time {
+   display:none;
+}
+.scrollYouDont {
+   overflow: visible;  
 }

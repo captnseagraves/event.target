@@ -17,48 +17,57 @@ class Calendar extends React.Component  {
      credentials: 'include'
    })
    .then(res => res.json())
-   .then(events => {
-      console.log(events[2]);
-     this.setState({
-       events:events
+   .then(single_events => {
+     fetch(`/api/subscription`, {
+         credentials: 'include'
      })
-    console.log('this is maybe the state', this.state.events)
+     .then(res => res.json())
+     .then(venue_subs => {
+       this.setState({
+           events: [...single_events, ...venue_subs]
+       })
 
-    console.log('test');
-   $('#calendar').fullCalendar({
-        header: {
-            left:   'prev,next',
-            center: 'title',
-            right:  'month,agendaWeek'
-        },
-        defaultView: 'month',
-        views: {
-           listDay: { buttonText: 'list day' },
-           listWeek: { buttonText: 'list week' }
-        },
-        editable: true,
-        navLinks: true,
-        events: this.state.events,
-        editable: true,
-        eventClick: function(calEvent, jsEvent, view) {
-           //modal perhaps with desciption and location
-         alert('Event: ' + calEvent.title);
-         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-         // change the border color just for fun
-         $(this).css('border-color', 'red');
+       console.log('this is maybe the state', this.state.events)
 
-}
+       console.log('test');
+      $('#calendar').fullCalendar({
+           header: {
+               left:   'prev,next',
+               center: 'title',
+               right:  'month,agendaWeek'
+           },
+           defaultView: 'month',
+           views: {
+              listDay: { buttonText: 'list day' },
+              listWeek: { buttonText: 'list week' }
+           },
+           editable: true,
+           navLinks: true,
+           events: this.state.events,
+           editable: true,
+           eventClick: function(calEvent, jsEvent, view) {
+             $('#modalTitle').html(calEvent.title);
+             $('#modalBody').html(calEvent.description);
+             $('#picaroo').attr('src',calEvent.event_cover_picture);
+             $('#whereWolf').html(`Venue: ${calEvent.venue_name}`);
+             $('#addy').html(`Address: ${calEvent.street} \n ${calEvent.city}  ${calEvent.state}  ${calEvent.zip}`);
+             $('#fullCalModal').modal();
+
+     }
+      })
+
+      console.log("give me a little", this.state.events);
+      $('#listCal').fullCalendar({
+           header: false,
+           defaultView: 'listMonth',
+           editable: true,
+           navLinks: true,
+           events: this.state.events,
+           editable: true,
+      })
+
    })
 
-   console.log("give me a little", this.state.events);
-   $('#listCal').fullCalendar({
-        header: false,
-        defaultView: 'listMonth',
-        editable: true,
-        navLinks: true,
-        events: this.state.events,
-        editable: true,
-   })
 
    })
  }
@@ -77,16 +86,35 @@ class Calendar extends React.Component  {
                <li><Link to="/feed">Feed</Link></li>
                <li><Link to="/category_list">Cateories</Link></li>
                <li><Link to="/about">About</Link></li>
-               <li><Link to="#">Log Out</Link></li>
+               <li><Link to="/">Log Out</Link></li>
              </ul>
            </div>
          </nav>
-        <div id="calendar"></div>
+        <div id="calendar" className="scrollYouDont"></div>
+       <div id="fullCalModal" className="modal fade">
+          <div className="modal-dialog">
+              <div className="modal-content">
+                  <div className="modal-header">
+                      <button type="button" className="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span className="sr-only">close</span></button>
+                      <h1 id="modalTitle" className="modal-title"></h1>
+                  </div>
+                  <img id="picaroo"></img>
+                  <div className="container">
+                     <br></br>
+                     <div id="whereWolf" className="lefty"></div><br></br>
+                     <div id="addy" className="lefty"></div>
+                  </div>
+                  <div id="modalBody" className="modal-body"></div>
+                  <div className="modal-footer">
+                  </div>
+              </div>
+    </div>
+</div>
         <hr></hr>
         <div id="listCal"> </div>
        </div>
      )
    }
-}
 
+}
 export default Calendar;

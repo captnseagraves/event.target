@@ -8,7 +8,10 @@ constructor(props) {
     events:this.props.events,
     categories:[]
   }
+
 }
+
+
 
 componentDidMount() {
 let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
@@ -18,9 +21,9 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
     this.setState({
       categories
     })
-    console.log('categories in feed list', this.state.categories);
     let filterArr = []
     for (var i = 0; i < this.props.events.length; i++) {
+      console.log('test');
       let event = this.props.events[i]
       if (this.state.categories.includes(event.category)) {
         filterArr.push(event)
@@ -33,8 +36,8 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
   })
 }
 
+
   render() {
-// console.log("feedlist", this.state.events);
     return (
           <div>
           <Events
@@ -43,6 +46,8 @@ let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
           </div>
        )
   }
+
+
  }
 
 export default FeedList

@@ -39,7 +39,7 @@ constructor(props) {
                    <li><Link to="/category_list">Cateories</Link></li>
                    <li><Link to="/calendar">Calendar</Link></li>
                    <li><Link to="/about">About</Link></li>
-                   <li><Link to="#">Log Out</Link></li>
+                   <li><Link to="/">Log Out</Link></li>
                  </ul>
                </div>
              </nav>

@@ -41,11 +41,11 @@ componentWillMount(){
             <li><Link to="/feed">Feed</Link></li>
             <li><Link to="/calendar">Calendar</Link></li>
             <li><Link to="/about">About</Link></li>
-            <li><Link to="#">Log Out</Link></li>
+            <li><Link to="/">Log Out</Link></li>
           </ul>
         </div>
       </nav>
-      <div className="col-xs-6 col-sm-4 userproCon">
+      <div className="col-md-2 col-md-offset-3 userproCon">
         <div className="panel panel-default clicable">
            <div className="panel-body">
                <div className="top-img">
