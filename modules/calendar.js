@@ -83,7 +83,7 @@ class Calendar extends React.Component  {
              <ul className="dropdown-menu">
                <li><Link to="/">Home</Link></li>
                <li><Link to="/feed">Feed</Link></li>
-               <li><Link to="/category_list">Cateories</Link></li>
+               <li><Link to="/category_list">Categories</Link></li>
                <li><Link to="/about">About</Link></li>
                <li><Link to="/">Log Out</Link></li>
              </ul>

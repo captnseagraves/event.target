@@ -12,24 +12,6 @@ constructor(props) {
 }
 
 
-
-// componentDidMount() {
-// let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
-//   fetch(`/api/user_category/${userId}`)
-//   .then(res => res.json())
-//   .then(categories => {
-//     this.setState({
-//       categories
-//     })
-//
-//     this.setState({
-//       events:filterArr
-//     })
-//
-//   })
-// }
-
-
   render() {
     return (
           <div>

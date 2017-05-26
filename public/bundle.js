@@ -25688,7 +25688,7 @@
 	                _react2.default.createElement(
 	                  _reactRouterDom.Link,
 	                  { to: '/category_list' },
-	                  'Cateories'
+	                  'Categories'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -26113,7 +26113,6 @@
 	      }).then(function (res) {
 	        return res.json();
 	      }).then(function (events) {
-	        console.log('here');
 	        _this2.setState({
 	          events: events
 	        });
@@ -26255,23 +26254,6 @@
 
 	    return _this;
 	  }
-
-	  // componentDidMount() {
-	  // let userId = document.cookie.match( /(; )?userId=([^;]*);?/ )[2]
-	  //   fetch(`/api/user_category/${userId}`)
-	  //   .then(res => res.json())
-	  //   .then(categories => {
-	  //     this.setState({
-	  //       categories
-	  //     })
-	  //
-	  //     this.setState({
-	  //       events:filterArr
-	  //     })
-	  //
-	  //   })
-	  // }
-
 
 	  _createClass(FeedList, [{
 	    key: 'render',
@@ -26474,16 +26456,6 @@
 	                this.props.event.description
 	              )
 	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'card-footer' },
-	            _react2.default.createElement(
-	              'small',
-	              null,
-	              'Tom G is a Banana'
-	            ),
-	            _react2.default.createElement('br', null)
 	          )
 	        )
 	      );
@@ -42548,22 +42520,22 @@
 	                                    _react2.default.createElement(
 	                                        'p',
 	                                        null,
-	                                        'Full-Stack Developer. Curator of code, user experience, and customer satisfaction. Agile, TDD Developer. Languages: HTML5, CSS3, JavaScript, jQuery, Bootstrap, Materialize, Node.js, SQL, PostgreSQL, Angular.js, Ruby on Rails'
+	                                        'A curator of code, user experience, and customer satisfaction, Kevin believes in beautiful code and elegant solutions to great challenges. He wants to use his skills in computer programming to better the world and live a happy, healthy life. '
 	                                    ),
 	                                    _react2.default.createElement('br', null),
 	                                    _react2.default.createElement(
 	                                        _reactRouterDom.Link,
-	                                        { to: '', target: '_blank' },
+	                                        { to: 'https://www.linkedin.com/in/kevinseagraves/', target: '_blank' },
 	                                        _react2.default.createElement('i', { className: 'fa fa-github fa-2x', 'aria-hidden': 'true' })
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        _reactRouterDom.Link,
-	                                        { to: '', target: '_blank' },
+	                                        { to: 'https://github.com/captnseagraves', target: '_blank' },
 	                                        _react2.default.createElement('i', { className: 'fa fa-linkedin fa-2x', 'aria-hidden': 'true' })
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        _reactRouterDom.Link,
-	                                        { to: '', target: '_blank' },
+	                                        { to: 'https://talent.galvanize.com/students/1396', target: '_blank' },
 	                                        _react2.default.createElement('i', { className: 'fa fa-link fa-2x', 'aria-hidden': 'true' })
 	                                    )
 	                                )

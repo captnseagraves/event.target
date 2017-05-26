@@ -49,9 +49,6 @@ otherClickHandler(event) {
               <p>{this.props.event.description}</p>
             </div>
         </div>
-        <div className="card-footer">
-            <small>Tom G is a Banana</small><br></br>
-        </div>
     </div>
 </div>
        )

@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/binbin', function(req, res, next) {
     let userId = req.cookies.userId
-    console.log(userId);
     getEventsBin()
         .then(events => {
             getUserCats(userId)
@@ -24,7 +23,6 @@ router.get('/binbin', function(req, res, next) {
                     })
                     let filterArr = []
                     for (var i = 0; i < events.length; i++) {
-                        console.log('test');
                         let event = events[i]
                         if (cats.includes(event.category)) {
                             filterArr.push(event)
@@ -45,6 +43,7 @@ router.get('/:id', function(req, res, next) {
             }
         })
 });
+
 const getUserCats = (userId) => {
     return knex('user_category')
         .join('categories', 'categories.id', 'user_category.category_id')

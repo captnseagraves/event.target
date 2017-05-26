@@ -20,7 +20,6 @@ constructor(props) {
       })
       .then(res => res.json())
       .then(events => {
-         console.log('here');
         this.setState({
           events:events
         })
